@@ -18,7 +18,7 @@ After the programming, the test persons had to fill out a questionnaire. Assessm
 
 The complete application is an image gallery, which uses a Focus Ring and the logging framework. It looks as follows:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>The probands created an image gallery using the artefacts of this IP5.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>The probands created an image gallery using the artefacts of this IP5.</p></figcaption></figure>
 
 ## Evaluation
 
@@ -46,10 +46,12 @@ The basic functionalities of the logging framework were clear to the participant
 
 The following is an evaluation of whether the logging framework would be an asset in a future project:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Evaluation Logging-Framework</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Evaluation Logging-Framework</p></figcaption></figure>
 
 ## Conclusion
 
 Basically, we are very happy with the result. Most of the attendees were able to solve the tasks without any major problem. The participants had somewhat more difficulty in recognizing the advantages of the principles applied. We attribute this to the unusual programming style used in curried-style, for example. This type of functional programming in JavaScript is rather unfamiliar to many. To make matters worse, some IDEs do not offer the same level of support as for example IntelliJ IDEA does. Therefore the probands have been forced to get a deeper understanding of the code or study the documentation.&#x20;
 
 In general, it has been noticed that good code documentation is central when using a framework or an unknown data structure. This also revealed that subjects without good integration of JSDoc in the IDE had to expend more effort to solve a task.
+
+For us, the most important insight is that the vast majority of subjects find the solutions developed in this project useful and could well imagine them being an asset in a future project.
