@@ -401,11 +401,11 @@ You can use the LogUi in your application by:
 Assumption that the LoggingFramwork is located in the root under `/logger/`.
 
 ```javascript
-import { LogFactory }   from "./logger/logFactory.js";
+import { LogFactory }                     from "./logger/logFactory.js";
 import { LOG_TRACE,addToAppenderList }    from "./logger/logger.js";
 
-import { Appender as ObservableAppender }   from "./logger/observableAppender.js";
-import { Appender as ConsoleAppender }      from "./logger/consoleAppender.js";
+import { Appender as ObservableAppender } from "./logger/observableAppender.js";
+import { Appender as ConsoleAppender }    from "./logger/consoleAppender.js";
 
 
 // use the observable Appender here (see imports)
