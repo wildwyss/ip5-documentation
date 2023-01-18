@@ -139,7 +139,7 @@ The `transform` operation takes and returns an object of type `TransformType<_T_
 | ----------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
 | `done`      | `Boolean` | `true` if the iterator already processed all elements.                                                            |
 | `current`   | `any`     | The current transformed value. This could be literally _anything_, depending on all the previous transformations. |
-| `nextValue` | `_T_`     | The next iteration of the initial value.                                                                          |
+| `nextValue` | `_T_`     | The value of the next iteration.                                                                                  |
 
 Using these parameters the `transform` function has access to all important information and state of the iterator.
 
