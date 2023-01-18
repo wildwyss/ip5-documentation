@@ -16,6 +16,10 @@ An iterator in JavaScript is basically an object that is implemented in complian
 
 In order to be iterable, an object must have a property with the key `[Symbol.iterator]`.  This property is a function that returns an object that is an iterator. This means it contains a `next` attribute. `next` is a function that returns the next element above the set being iterated on and a `done` attribute. This continues until the `done` attribute is true, which is also contained in the object.
 
+{% hint style="info" %}
+When Kolibri Iterator is mentioned in this chapter, the implementation of the Iterator protocol described **here** is referred to. However, if only iterator is mentioned, iterators in general are meant.
+{% endhint %}
+
 ### What can an iterator be used for?
 
 An iterator following the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols)  allows to use `for-of` loops, destructuring assignments and much more on a self created object type. This opens up new possibilities in the way programming problems can be solved. Later in this document, a [Range](range.md) using a Kolibri Iterator which is specialized on number will be described.
@@ -173,13 +177,31 @@ For the Operation `map` this looks as follows:
   };
 ```
 
-
-
 ### Naming
 
 Some functions on the iterator also work with infinite sequences. Thus infinite data streams can be generated. However some operations on the iterator are not able to handle infinite iterators. For example the `reverse$` operation needs to process all elements.
 
 Functions that only work with finite sequences are marked with a `$` sign at the end of their names. The dollar sign was chosen because it also marks the end of a line in regex expressions.
+
+## Future features
+
+This section describes further features that could extend the Kolibri Iterator.
+
+| Feature                           | Description                                                           |
+| --------------------------------- | --------------------------------------------------------------------- |
+| Improve `retainAll` & `rejectAll` | optimize implementation of `retainAll` & `rejectAll` with `dropWhile` |
+| `tail$`                           | returns the last element and drops it                                 |
+| `uncons`                          | removes the head from a list and returns it                           |
+| `mapIndexed`                      | transform each element with a given index                             |
+| `find`                            | returns the first element which fulfills a given predicate            |
+| `count`                           | the number of all elements                                            |
+| `max$`                            | the max item of all elements                                          |
+| `min$`                            | the min item of all elements                                          |
+| `zip`                             | combines to iterables with one element each                           |
+| `zipWith`                         | combines to iterables with one element each by a given function       |
+| `zipWithIndex`                    | combines an iterable with its indices                                 |
+| `concat$`                         | attaches one iterator to another                                      |
+| `sort$`                           | sorts all elements by a given function                                |
 
 ## References
 
