@@ -50,7 +50,7 @@ The following is an evaluation of whether the logging framework would be an asse
 
 ## Conclusion
 
-Basically, we are very happy with the result. Most of the attendees were able to solve the tasks without any major problem. The participants had somewhat more difficulty in recognizing the advantages of the principles applied. We attribute this to the unusual programming style used in curried-style, for example. This type of functional programming in JavaScript is rather unfamiliar to many. To make matters worse, some IDEs do not offer the same level of support as for example IntelliJ IDEA does. Therefore the probands have been forced to get a deeper understanding of the code or study the documentation.&#x20;
+Basically, we are very happy with the result. Most of the attendees were able to solve the tasks without any major problem. The participants did not always see the advantages of the applied principles, for example the unusual programming style using curried functions. This type of functional programming in JavaScript is rather unfamiliar to many. To make matters worse, some IDEs do not offer the same level of support as for example IntelliJ IDEA does. Therefore the probands have been forced to get a deeper understanding of the code or study the documentation.&#x20;
 
 In general, it has been noticed that good code documentation is central when using a framework or an unknown data structure. This also revealed that subjects without good integration of JSDoc in the IDE had to expend more effort to solve a task.
 
