@@ -251,10 +251,16 @@ All loggers returned by the log factory will have the same context and the same 
 Assumption that the LoggingFramework is located in the same directory under `/logger/`.
 
 ```javascript
-import {LOG_DEBUG, LOG_ERROR, setGlobalContext, setLoggingLevel} from "./logger/logger.js";
+import { 
+    LOG_DEBUG, 
+    LOG_ERROR, 
+    setGlobalContext, 
+    setLoggingLevel 
+} from "./logger/logger.js";
+
 /* Use a different appender by just importing the appender from another file. */
-import {Appender} from "logger/appender/consoleAppender.js";
-import {LogFactory} from "logger/logFactory.js";
+import { Appender }   from "logger/appender/consoleAppender.js";
+import { LogFactory } from "logger/logFactory.js";
 
 // Configure the environment
 // define a log target
