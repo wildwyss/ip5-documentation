@@ -398,7 +398,7 @@ The UI offers following functions:
 
 You can use the LogUi in your application by:
 
-Assumption that the LoggingFramwork is located in the root under `/logger/`.
+Assumption that the logging framework is located in the root under `/logger/`.
 
 ```javascript
 import { LogFactory }                     from "./logger/logFactory.js";
@@ -447,3 +447,9 @@ This section describes further features that could extend the logging framework.
 | lazy      | An expression is called lazy, if it's evaluated at the time it is used.                                                                     |
 | Priority  | Describes the level of a log message.                                                                                                       |
 | pure      | Functions which do not have a side effect are called pure.                                                                                  |
+
+## References
+
+| Apache Log4J | [https://logging.apache.org/log4j/2.x/](https://logging.apache.org/log4j/2.x/)       |
+| ------------ | ------------------------------------------------------------------------------------ |
+| Monad Logger | [https://github.com/snoyberg/monad-logger](https://github.com/snoyberg/monad-logger) |
