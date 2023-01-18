@@ -69,7 +69,7 @@ const [left, right]  = normalize(firstBoundary, secondBoundary, stepIsNegative);
 
 This normalization process is explained by the following flow chart diagram:
 
-<figure><img src="../.gitbook/assets/boundary-normalization (1).png" alt=""><figcaption><p>The normalization process of <code>firstBoundary</code> and <code>secondBoundary</code>. </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/boundary-normalization (2).png" alt=""><figcaption><p>The normalization process of <code>firstBoundary</code> and <code>secondBoundary</code>. </p></figcaption></figure>
 
 ### Increment function
 
