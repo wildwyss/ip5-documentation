@@ -52,11 +52,6 @@ The following feature set is implemented in the logging library:
   * `CountAppender`: Keeps statistics about the log messages already made.
   * `ObservableAppender`: Notifies its listeners when a new log message has arrived.
 
-{% hint style="info" %}
-**logging level vs. logger level**\
-The term "logging level" refers to the lowest level that a log message must have in order to be logged. "Logger level", on the other hand, refers to the priority with which the respective logger writes log messages.
-{% endhint %}
-
 ## Module overview
 
 Modules have been created to divide up the various responsibilities. The following diagram illustrates the dependencies of the modules:
@@ -81,6 +76,12 @@ Roughly speaking, the logging framework has two aspects that need to be distingu
 The logging environment defines the "what". The environment defines what is logged, where it is logged and if logging is done at all. Changes made to the environment will affect all loggers.
 
 A logger, on the other hand, defines the "how". A logger defines how a logging message looks like and on which level it is logged. When a new logger is created and configured, this does not affect existing loggers.
+
+{% hint style="info" %}
+**logging level vs. logger level**\
+The term "logging level" refers to the lowest level that a log message must have in order to be logged. It ist configured on the environment.\
+"Logger level", on the other hand, refers to the priority with which the respective logger writes log messages.
+{% endhint %}
 
 ### Configuration of the logging environment
 
@@ -129,7 +130,7 @@ addToAppenderList(consoleAppender);
 
 There are some predefined appenders. Custom appenders can be implemented as well. Refer to [Usage of appenders](logging-framework.md#appender-1) to see which appender exist and how new appenders can be developed.
 
-### Configuration of the logger
+### Configuration of loggers
 
 There is only one logging environment, but there are any number of loggers. These loggers can all be configured and customized individually.
 
@@ -209,7 +210,6 @@ const formatLogMsg = context => logLevel => logMessage => {
   const date = new Date().toISOString();
   return `${context}: [${logLevel}] ${date}: ${logMessage}`;
 };
-
 
 // use the previously defined logger and pass the formatting function to it.
 let debug = debug(formatLogMsg);
@@ -335,9 +335,7 @@ If an appender stores log messages in a data structure, attention must be payed 
 
 #### Use appenders
 
-To use appenders you have to use the provided functions by the module `logger.js`.
-
-Following functions are provided by `logger.js` for managing the current loggers:
+To use appenders you have to use the provided functions by the module `logger.js`. Following functions are provided by `logger.js` for managing the current loggers:
 
 | Name                     | Parameters               | Description                                                                                     |
 | ------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------- |
@@ -384,8 +382,8 @@ The LogUI is a visual representation of all log messages appended to the Observa
 
 The UI offers following functions:
 
-* Use the **Global Context** field to change the [Global Context](logging-framework.md#global-context) of all loggers.
-* Use the **Logging Level** to select the global [logging Level](logging-framework.md#log-levels).
+* Use the **Global Context** field to change the [Global Context](logging-framework.md#global-context) of the environment.
+* Use the **Logging Level** to select the [logging Level](logging-framework.md#log-levels).
 * Use the **Filter** field to display only log messages that contain the entered text
 * Select a **chip** to show or hide messages belonging to this [log level](logging-framework.md#log-levels).
 * Use the **RESET** button to clear the log messages container.
@@ -405,8 +403,8 @@ import { Appender as ConsoleAppender }      from "./logger/consoleAppender.js";
 
 
 // use the observable Appender here (see imports)
-addToAppenderList(observableAppender());
-addToAppenderList(consoleAppender());
+addToAppenderList(ObservableAppender());
+addToAppenderList(ConsoleAppender());
 
 const formatLogMsg = ... ;
 
@@ -420,6 +418,8 @@ createLogUi(container);
 ```
 
 For ideas how you could use this in your application, please consider our example. You can find it under `/logger/logUi/example/`.
+
+The running example can be found [here](https://wildwyss.github.io/ip5-sample-applications/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html). Note that you have to unwrap it by clicking on the Kolibri logo on the right side.
 
 ## Future features
 
@@ -437,7 +437,7 @@ This section describes further features that could extend the logging framework.
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | Appender  | Appenders are used to log messages to different targets. Refer the section [Features](logging-framework.md#features) for more informations. |
 | Factory   | A class or method which creates objects.                                                                                                    |
-| immutable | A datastructure or variable which can no be changed.                                                                                        |
+| immutable | A data structure or variable which can no be changed.                                                                                       |
 | lazy      | An expression is called lazy, if it's evaluated at the time it is used.                                                                     |
 | Priority  | Describes the level of a log message.                                                                                                       |
-| pure      | A functionis called pure, when it has no side effects.                                                                                      |
+| pure      | Functions which do not have a side effect are called pure.                                                                                  |
