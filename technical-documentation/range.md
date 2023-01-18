@@ -5,7 +5,7 @@ description: A range for the Kolibri Web UI Toolkit
 # Range
 
 {% hint style="info" %}
-This section explains how a Range works and how a new Range can be created using the Kolibri.
+This section explains how a range works and how a new range can be created using the Kolibri.
 {% endhint %}
 
 ## Introduction
@@ -37,35 +37,28 @@ The example above from Haskell shows very nicely how a range can be processed fu
 
 There are no built-in ranges in JavaScript. Since JavaScript is a functional programming language at its core and also allows many functional paradigms, it is quite desirable to have similar possibilities with ranges that for example the functional programming language Haskell offers.&#x20;
 
-In this IP5 project, therefore, a range was created that generates a sequence of numbers. This range has been implemented as [Kolibri Iterator](iterator.md). Therefore, all [Kolibri Iterator functions](iterator.md#iterator-functions) can also be performed on the range.
+Therefore a range is added to the Kolibri Web UI Toolkit. Under the hood, the range uses a [Kolibri Iterator](iterator.md). Therefore, all [Kolibri Iterator functions](iterator.md#iterator-functions) can also be performed on the range.
 
 ## Research
 
-Since many programming languages already have built-in ranges, it was intuitively clear how the range should be used in Kolibri. What should be mentioned, however, is that not all programming languages treat the boundaries of the ranges the same. In Kotlin and Haskell, for example, both ranges are inclusive. A range of 1 - 3 contains the elements 1, 2, 3. In Python only the lower limit is inclusive. Therefore to create the same range in Python the limits must be set to 1 and 4.&#x20;
+Since many programming languages already have built-in ranges, it was intuitively clear how the range should be used in Kolibri. What should be mentioned, however, is that not all programming languages treat the boundaries of the ranges the same. In Kotlin and Haskell, for example, both boundaries are inclusive. A range of 1 - 3 contains the elements 1, 2, 3. In Python only the lower limit is inclusive. Therefore to create the same range in Python the limits must be set to 1 and 4.&#x20;
 
-Since it seemed more intuitive to have both borders inclusive, the range for Kolibri was implemented accordingly.
+Since it seems more intuitive to have both borders inclusive, the range for Kolibri was works accordingly.
 
 ## Features
 
 * **Parametrization**: The range can be initialized with 1-3 parameters. The parameters specify the lower limit, the upper limit and the step size. If not all parameters are set the range uses suitable default values.
 * **Interchangeable boundaries:** Lower and upper limit can be interchanged when creating a new range.
 * **Negative boundaries & step**: The boundaries and the step size of the range can be positive or negative integers.&#x20;
-* **Iteration protocols**: The range is compliant with the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols).
+* **Iteration protocols**: The range is compliant with the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols) and is implemented using a Kolibri Iterator.
 
 ## Implementation
 
-The range is implemented using a [Kolibri Iterator](iterator.md), and thus implements the JS iteration protocols.
-
-Like all [Kolibri Iterators](iterator.md), the range is built on the three components `startValue`, `incrementFunction` & `stopDetected`.
+Since the range is implemented using a [Kolibri Iterator](iterator.md), it is built on the three components `startValue`, `incrementFunction` & `stopDetected`.
 
 ### Normalization of the boundaries
 
-Since the boundaries of the range are interchangeablea and the step can be a postive or negativ integer, the first boundary and the second boundary are normalized at first. Depending on the two limits and the step value, this normalization is used to find out with which value to start and which is the highest value that can be produced using this range. The new normalized boundaries are then both stored as local const `left` and `right`. The value `left` will be used as starting value in the [Kolibri Iterator](iterator.md), `right` for the stop detection.
-
-```javascript
-const stepIsNegative = 0 > step;
-const [left, right]  = normalize(firstBoundary, secondBoundary, stepIsNegative);
-```
+Since the boundaries of the range are interchangeable and the step can be a positive or negative integer, the first boundary and the second boundary are normalized at first. Depending on the step value, this normalization is used to find out with which value contains the first number to be produced and which the last. The new normalized boundaries are then both stored as local const `left` and `right`. The value `left` will be used as starting value in the [Kolibri Iterator](iterator.md), `right` for the stop detection.
 
 This normalization process is explained by the following flow chart diagram:
 
@@ -81,11 +74,36 @@ To find out if a range has reached the end of its values, the current value (cur
 
 If the step size is a negative value, it is counted from top to bottom: The range is at the end as soon as the value current is smaller than the value right.&#x20;
 
-If the step size is positive, it is counted from bottom to top: The range is then at the end as soon as the current value is greater than the value right.
+If the step size is positive, it is counted from bottom to top: The range is then at the end as soon as the current value is greater than the value right. Given these rules the stop is built like:
+
+```javascript
+const hasReachedEnd = (stepIsNegative, next, end) =>
+    stepIsNegative ? next < end : next > end;
+```
 
 {% hint style="warning" %}
 If `(right - left) % step` does not result in `0`, the last value of the range is smaller than `right`.
 {% endhint %}
+
+### Final implementation of the range
+
+Given these functions the range is implemented as:
+
+```javascript
+// Some code
+const Range = (firstBoundary, secondBoundary = 1, step = 1) => {
+  const stepIsNegative = 0 > step;
+  // boundaries are normaleized according to the flow chart above
+  const [left, right]  = normalize(firstBoundary, secondBoundary, stepIsNegative);
+
+  // a new Kolibri Iterator is created
+  return Iterator(
+    left,
+    value => value + step,
+    value => hasReachedEnd(stepIsNegative, value, right)
+  );
+};
+```
 
 ## Usage
 
@@ -113,7 +131,7 @@ Since each combination between the `firstBoundary`, the `secondBoundary` and the
 
 ### Contract
 
-When using the Kolibri `Range` make sure, you pay attention to following things:
+When using the Kolibri `Range` constructor, the following things must be respected:
 
 * End-value may not be reached exactly, but will never be exceeded.
 * Zero step size leads to infinite loops, returning always the same values
@@ -124,7 +142,7 @@ When using the Kolibri `Range` make sure, you pay attention to following things:
 Assumption that the implementation of the range is located under `/range/`.
 
 ```javascript
-import { Range } from "range/range.js"
+import { Range } from "./range/range.js"
 
 // typical cases
 // logs the values 0,1,2,3
@@ -179,3 +197,10 @@ const values = Range(1, 10) // new range from 1-10
     .map(curr => 2 * curr);
 console.log(...values); // logs 4,8
 ```
+
+## References
+
+| Ranges in Kotlin | [https://kotlinlang.org/docs/ranges.html](https://kotlinlang.org/docs/ranges.html)                                                             |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ranges in Python | [https://www.w3schools.com/python/ref\_func\_range.asp](https://www.w3schools.com/python/ref\_func\_range.asp)                                 |
+| Lists in Haskell | [https://hackage.haskell.org/package/base-4.17.0.0/docs/Data-List.html](https://hackage.haskell.org/package/base-4.17.0.0/docs/Data-List.html) |

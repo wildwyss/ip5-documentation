@@ -66,7 +66,6 @@ Since the Focus Ring is immutable, it must be reassigned for further processing.
 
 ## References
 
-| Author                                                              | Source                                                                                                     |
-| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Simon Peyton Jones, A Taste of Haskell - part1 July 23, OSCON 2007: | [https://www.youtube.com/watch?v=jLj1QV11o9g\&t=224s](https://www.youtube.com/watch?v=jLj1QV11o9g\&t=224s) |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 
