@@ -16,14 +16,17 @@ A Focus Ring is a data structure in which the elements are arranged as a ring in
 
 ### What can a Focus Ring be used for?
 
-There are many different applications for a Focus Ring. The following are the most common ones:\
-To make a selection in a set, may it be date, time, or a month, a concept of a roller is often used. - -Here the Focus Ring can be used to show the currently selected element in focus very easily and scrolling through the other elements can be realized by moving the focus.&#x20;
+There are many different applications for a Focus Ring. The following are common ones:
 
-Probably the best known application for a Focus Ring is an image gallery. In this gallery there is one image in focus, the one the user is currently viewing. To the right and to the left of it, it is usually visually indicated that further images are available. This signals the user that it is possible to navigate to the left or right to view more images.
+#### Image gallery
 
-#### Demo application
+A good application for the Focus Ring could be an image gallery. The user is currently looking at one image, which is the focus. With arrow buttons on the left and right, the image in the focus can be moved to the next or previous one.
 
-Another implementation that uses a focus ring is a slot machine. This slot machine uses three focus rings - one for each reel:
+#### Rollers
+
+On mobile devices often a roller is used to select date, time or a month. This is a perfect use case for the Focus Ring as well, since there is always one "chosen" element. Scrolling through the other elements can be realized by moving the focus.
+
+Similar to the date roller on mobile devices, another implementation that uses a Focus Ring is a slot machine. The slot machine has been created during this IP5 to show how Focus Rings could be used in applications. This slot machine uses three focus rings - one for each reel:
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>A slot machine where each roller is implemented using a Focus Ring.</p></figcaption></figure>
 
