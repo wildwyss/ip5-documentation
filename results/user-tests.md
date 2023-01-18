@@ -22,7 +22,7 @@ The feedback were divided according to the implemented abstractions. At the end 
 
 ### Range
 
-In general, a range did not cause any major problems or incomprehensibility for the subjects.This is probably due to the fact that a range is also known from other programming languages. Most of the test persons think that a range could be used in a own project.It was also clear to most that a range can be further processed as an iterable. So most assume that `map`, `filter` or even `drop` are available.
+In general, a range did not cause any major problems or incomprehensibility for the probands. This is probably due to the fact that a range is also known from other programming languages. Most of the test persons think that a range could be used in a own project. It was also clear to most that a range can be further processed by other functions. So most assume that `map`, `filter` or even `drop` are available.
 
 The following is an evaluation of whether a range would be an asset in a future project:
 
