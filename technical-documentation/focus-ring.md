@@ -28,7 +28,7 @@ On mobile devices often a roller is used to select date, time or a month. This i
 
 Similar to the date roller on mobile devices, another implementation that uses a Focus Ring is a slot machine. The slot machine has been created during this IP5 to show how Focus Rings could be used in applications. This slot machine uses three focus rings - one for each reel:
 
-<figure><img src="../.gitbook/assets/image (1) (2).png" alt=""><figcaption><p>A slot machine where each roller is implemented using a Focus Ring.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>A slot machine where each roller is implemented using a Focus Ring.</p></figcaption></figure>
 
 The working slot machine can be tried here: [Slot machine demo application](https://wildwyss.github.io/ip5-sample-applications/contrib/p5\_wild\_wyss/src/focusring/example/SlotMachine.html).
 

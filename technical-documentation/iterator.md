@@ -190,6 +190,7 @@ This section describes further features that could extend the Kolibri Iterator.
 | Feature                           | Description                                                           |
 | --------------------------------- | --------------------------------------------------------------------- |
 | Improve `retainAll` & `rejectAll` | optimize implementation of `retainAll` & `rejectAll` with `dropWhile` |
+| Additional constructor            | a curried-style constructor for the iterator                          |
 | `tail$`                           | returns the last element and drops it                                 |
 | `uncons`                          | removes the head from a list and returns it                           |
 | `mapIndexed`                      | transform each element with a given index                             |
