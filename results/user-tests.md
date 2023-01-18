@@ -12,26 +12,26 @@ This page describes the results of the user tests.
 
 To test the implemented abstractions more widely, we performed user tests. Our probands were all students who program on a daily basis and are typical users of implementations like the one we implemented.
 
-We have created a JavaScript file for this purpose, which contains some prepared tasks. Dazu wurde im Code ein Grundgerüst einer Applikation erstellt und da wo der Proband etwas ergänzend programmieren musste war eine Aufgabe mit einem TODO markiert und beschrieben.
+We have created a JavaScript file for this purpose, which contains some prepared tasks. For this purpose, a basic structure of an application was created in the code and where the test person had to program something supplementary, a task was described and marked with a TODO.
 
-Anschliessend zum Programmieren mussten die Probanden einen Fragebogen ausfüllen. Einschätzungen über die Verständlichkeit und der Sinnhaftigkeit der Frameworks wurden nebst Grundsätzlichen Ansichten abgefragt. Die Resultate werden in diesem Dokument nachfolgend erörtert.
+After the programming, the test persons had to fill out a questionnaire. Assessments of the comprehensibility and usefulness of the frameworks were queried along with basic opinions. The results are discussed below in this document.
 
 ## Evaluation
 
-Die Feedbacks wurden nach den implementierten Abstraktionen unterteilt. Am Ende des Fragebogens durften die Probanden noch angeben, ob sie sich für erfahrene Programmierer halten und ob sie Kenntnisse der Funktionalen Programmierung haben. Dabei denkt ungefähr drei viertel, dass sie erfahren sind und fast alle sind mit der funktionalen Programmierung vertraut.
+The feedbacks were divided according to the implemented abstractions. At the end of the questionnaire, the probands were also allowed to state whether they considered themselves experienced programmers and whether they had knowledge of functional programming. Therefore, about three-fourths think they are experienced and almost all are familiar with functional programming.
 
 ### Range
 
-Allgemein hat ein Range bei den Probanden keine grösseren Probleme oder Unverständlichkeiten hervorgerufen. Dies ist vermutlich darauf zurück zu führen, dass ein Range auch von anderen Programmiersprachen bekannt ist. So denken die meisten Probanden, das ein Range in einem Projekt durchaus zum Einsatz kommen könnte. Für die meisten war auch klar, dass ein Range als Iterable weiter prozessiert werden kann. So gehen die meisten davon aus, dass map, filter oder auch drop Verfügbar sind.
+In general, a range did not cause any major problems or incomprehensibility for the subjects.This is probably due to the fact that a range is also known from other programming languages. Most of the test persons think that a range could be used in a own project.It was also clear to most that a range can be further processed as an iterable. So most assume that map, filter or even drop are available.
 
 ### Focusring
 
-Die Mehrheit der Probaneden haben den Fokusring als einfache Datenstruktur empfunden und denken, dass sie mit der Funktionsweise dieser Datenstruktur nach der Durchführung des Tests vertraut sind. Alle Teilnehmer sehen Vorteile darin, dass der Focusring immutable ist. Fast alle könnten sich ein Einsatz dieser Datenstruktur in einem zukünfigen Projekt vorstellen.
+DThe majority of the probands found the focus ring to be a simple data structure and think that they are familiar with how this data structure works after performing the programming exercise. All participants see advantages in the fact that the focus ring is immutable.Almost all of them could imagine using this data structure in a future project.
 
 ### Logging Framework
 
-Die Grundfunktionalitäten des Logging-Frameworks war den Probanden klar. Einfache Fragen zur Handhabung wurden von allen Probanden richtig beantwortet. Die meisten denken auch, dass sie das Framework schnell verstanden haben. Etwas differenzierter sieht es bei der Konfiguration des Loggers mittels curried-style aus. Hier haben einige den Vorteil dieser impementation nicht erkennen können und empfinden dies als unnötig kompliziert. Jedoch sind sich alle einig, dass der gewonnene Nutzen das etwas kompliziertere Setup rechtfertigt. Die meisten könnten sich auch einen Einsatz des Logging-Framework in einer eigenen Applikation vorstellen.
+The basic functionalities of the logging framework were clear to the participants. Simple handling questions were answered correctly by all probands. Most also think that they quickly understood the framework. The configuration of the logger via curried-style is a bit more differentiated. Here some have not been able to see the advantage of this implementation and feel this is unnecessarily complicated. However, everyone agrees that the benefits gained justify the slightly more complicated setup. Most could also imagine using the logging framework in their own application.
 
-## Fazit
+## Conclusion
 
-Grundsätzlich sind wir mit dem Resultat sehr zufieden. Die meisten konnten die Aufgaben ohne grössere Probleme lösen. Etwas mehr mühe hatten die Teilnehmer wenn sie Vorteile von angewendeten Prinzipien erkennen sollten. Wir führen dies zurück auf die ungewohnte programmierweise, die zum Beispiel im curried-style angewendet wird. Diese Art der funktionalen Programmierung ist für viele eher ungewohnt. Erschwerden kommt dazu, dass die IDE nicht die gleiche unterstützung bietet und man gewzugen ist, tieferes Verständnis des Codes zu erlangen oder die Dokumentation zu studieren. Allgemein ist aufgefallen, dass eine gute Code-Dokumentation für die Verwendung eines Frameworks oder Datenstruktur zentral ist. So ist auch zum Vorschein gekommen, dass Probanden ohne gute Integrierung der jsDoc in der IDE mehr Aufwand betreiben müssen um eine Aufgabe zu lösen.
+Basically, we are very happy with the result. Most of them were able to solve the tasks without any major problems. The participants had somewhat more difficulty in recognizing the advantages of the principles applied. We attribute this to the unusual programming style used in curried-style, for example. This type of functional programming is rather unfamiliar to many. To make matters worse, the IDE does not offer the same level of support and you are forced to get a deeper understanding of the code or study the documentation. In general, it has been noticed that good code documentation is central to the use of a framework or data structure. This also revealed that subjects without good integration of the jsDoc in the IDE had to expend more effort to solve a task.
