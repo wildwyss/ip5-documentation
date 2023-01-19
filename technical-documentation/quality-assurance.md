@@ -34,7 +34,7 @@ This test framework is very easy to use and provides a good overview of successf
 
 Below you can see a screenshot of the summary of our written tests. To organize the tests we used separate test suites for each feature. This allows for a differentiated view.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Test Summary</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Test Summary</p></figcaption></figure>
 
 ### Code documentation
 
@@ -94,7 +94,7 @@ const Range = (firstBoundary, secondBoundary = 0, step = 1) => {
 
 ## References
 
-| Java - Functional Interfaces                   | [https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IP6-Documentation including the Test Framework | [https://dierk.github.io/Home/data/IP6\_Bericht\_Misic\_H%C3%A4fliger.pdf](https://dierk.github.io/Home/data/IP6\_Bericht\_Misic\_H%C3%A4fliger.pdf)                   |
-| jsDoc Homepage                                 | [https://jsdoc.app/](https://jsdoc.app/)                                                                                                                               |
+| Java - Functional Interfaces                             | [https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IP6-Documentation including the Test Framework (Page 61) | [https://dierk.github.io/Home/data/IP6\_Bericht\_Misic\_H%C3%A4fliger.pdf](https://dierk.github.io/Home/data/IP6\_Bericht\_Misic\_H%C3%A4fliger.pdf)                   |
+| jsDoc Homepage                                           | [https://jsdoc.app/](https://jsdoc.app/)                                                                                                                               |

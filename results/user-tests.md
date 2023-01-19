@@ -18,7 +18,7 @@ After the programming part, the test persons had to fill out a questionnaire. As
 
 The complete application is an image gallery, which uses a Focus Ring and the logging framework. It looks as follows:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>The probands created an image gallery using the artefacts of this IP5.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (3).png" alt=""><figcaption><p>The probands created an image gallery using the artefacts of this IP5.</p></figcaption></figure>
 
 ## Evaluation
 
@@ -38,7 +38,7 @@ The majority of the probands found the Focus Ring to be a simple data structure 
 
 The following is an evaluation of whether a focus ring would be an asset in a future project:
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Evaluation Focusring</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Evaluation Focusring</p></figcaption></figure>
 
 ### Logging Framework
 
@@ -46,7 +46,7 @@ The basic functionalities of the logging framework were clear to the participant
 
 The following is an evaluation of whether the logging framework would be an asset in a future project:
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption><p>Evaluation Logging-Framework</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Evaluation Logging-Framework</p></figcaption></figure>
 
 ## Conclusion
 
