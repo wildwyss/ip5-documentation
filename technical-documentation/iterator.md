@@ -12,9 +12,9 @@ The basic functionality of an iterator, the possible operations on it and the ge
 
 ### What is an iterator?
 
-An iterator in JavaScript is basically an object that is implemented in compliance with the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols). An iterator is characterized by the fact that it can only be iterated once over a set of elements. After that the iterator is used up.
+An iterator in JavaScript is an object that is implemented in compliance with the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols). An iterator is characterized by the fact that it can only be iterated once over a set of elements. After that the iterator is used up.
 
-In order to be iterable, an object must have a property with the key `[Symbol.iterator]`.  This property is a function that returns an object that is an iterator. This means it contains a `next` attribute. `next` is a function that returns the next element above the set being iterated on and a `done` attribute. This continues until the `done` attribute is true, which is also contained in the object.
+In order to be iterable, an object must have a property with the key `[Symbol.iterator]`.  This property is a function that returns an object that is an iterator. This means it contains a `next` attribute. `next` is a function that returns an object containing the next element above the set being iterated on and a `done` attribute. This continues until the `done` attribute is `true`.
 
 {% hint style="info" %}
 When Kolibri Iterator is mentioned in this chapter, the implementation of the Iterator protocol described **here** is referred to. However, if only iterator is mentioned, iterators in general are meant.
@@ -22,13 +22,13 @@ When Kolibri Iterator is mentioned in this chapter, the implementation of the It
 
 ### What can an iterator be used for?
 
-An iterator following the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols)  allows to use `for-of` loops, destructuring assignments and much more on a self created object type. This opens up new possibilities in the way programming problems can be solved. Later in this document, a [Range](range.md) using a Kolibri Iterator which is specialized on number will be described.
+An iterator following the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols)  allows to use `for-of` loops, destructuring assignments and much more on a self created object type. This opens up new possibilities in the way programming problems can be solved. Later in this document, a [Range](range.md) using a Kolibri Iterator which is specialized on numbers will be described.
 
 Another advantage of the iterator is that the next element can be calculated. Thus, under certain circumstances, only the current element must be stored. This can significantly increase the storage efficiency.
 
 ## Research
 
-When looking at other programming languages, it can be seen that the concept of iterating is probably represented in each one. The approaches to iterators in other programming languages differ mainly in the internal implementation, as well as in the number of the provided functionalities on an iterable object. JavaScript, for example, provides only a few functions on an iterable, whereas Haskell has implemented a more pronounced API.&#x20;
+When looking at other programming languages, it can be seen that the concept of iterating is probably represented in each one. The approaches to iterators in other programming languages differ mainly in the internal implementation, as well as in the number of the provided functionalities on an iterable object. JavaScript, for example, provides only a few operation on an iterable, whereas Haskell has implemented a more pronounced API.&#x20;
 
 Some concepts are adapted from Haskell during the development of this Kolibri Iterator. To give an example, a function `cons` was implemented analogous to the `cons` operator in Haskell.
 
@@ -61,13 +61,13 @@ The Kolibri Iterator extends the JS iteration protocols with the following opera
 
 ### ArrayIterator
 
-As an extension of the Kolibri Iterator, an `ArrayIterator` is implemented. The `ArrayIterator` enables the usage of the functions mentioned before on arrays.
+As an extension of the Kolibri Iterator, an `ArrayIterator` is implemented. The `ArrayIterator` enables the usage of the operations mentioned before on arrays.
 
 ## Usage
 
 ### Creating a Kolibri Iterator
 
-To create a Kolibri Iterator, constructor function `Iterator` can be used, which takes the following parameters:
+To create a Kolibri Iterator, the constructor function `Iterator` can be used. It takes the following parameters:
 
 | Name                | Type           | Description                                                           |
 | ------------------- | -------------- | --------------------------------------------------------------------- |
@@ -135,20 +135,20 @@ Thus a pre-calculation takes place, in which the next value is calculated in eac
 
 When using the constructor function `Iterator` a new Kolibri Iterator is created. This function calls a non-exported constructor that takes an additional fourth parameter `transform`, which is initially set to the identity function.&#x20;
 
-This function is a unary operator that is applied to the current element each time `next` is called. The result of `transform` applied to the current value, is then returned. Many of the operations implemented on the Kolibri Iterator override the `transform` function to change the iterator.&#x20;
+This function is a unary operator that is applied to the current element each time `next` is called. The result of `transform` is then returned. Many of the operations implemented on the Kolibri Iterator override the `transform` function to change the iterator.&#x20;
 
-The `transform` operation takes and returns an object of type `TransformType<_T_>`:
+The `transform` operation takes and returns an object of type `TransformType<_T_>`. This object has following attributes:
 
 | Name        | Type      | Description                                                                                                       |
 | ----------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
 | `done`      | `Boolean` | `true` if the iterator already processed all elements.                                                            |
 | `current`   | `any`     | The current transformed value. This could be literally _anything_, depending on all the previous transformations. |
-| `nextValue` | `_T_`     | The value of the next iteration.                                                                                  |
+| `nextValue` | `_T_`     | The pre calculated value of the next iteration.                                                                   |
 
-Using these parameters the `transform` function has access to all important information and state of the iterator.
+Using these parameters the `transform` function has access to all important information and states of the iterator.
 
 {% hint style="info" %}
-Since every Kolibri Iterator depends on an increment and stop detection function which are defined at the start, the real untransformed value must be kept as well. This means that in every iteration the untransformed value is increased and kept. The transformed value then is returned.
+Since every Kolibri Iterator depends on an increment and stop detection function which are defined at the start, the real _untransformed_ value must be kept as well. Otherwise the incrementation won't work anymore. This means that in every iteration the untransformed value is increased and kept. Then the transformation is applied.
 {% endhint %}
 
 A typical usage of `transform` looks as follows:
@@ -179,7 +179,7 @@ For the Operation `map` this looks as follows:
 
 ### Naming
 
-Some functions on the iterator also work with infinite sequences. Thus infinite data streams can be generated. However some operations on the iterator are not able to handle infinite iterators. For example the `reverse$` operation needs to process all elements.
+Some functions defined on the Kolibri Iterator also work with infinite sequences. Thus infinite data streams can be generated. However some operations on the iterator are not able to handle infinite iterators. For example the `reverse$` operation needs to process all elements.
 
 Functions that only work with finite sequences are marked with a `$` sign at the end of their names. The dollar sign was chosen because it also marks the end of a line in regex expressions.
 
@@ -187,22 +187,21 @@ Functions that only work with finite sequences are marked with a `$` sign at the
 
 This section describes further features that could extend the Kolibri Iterator.
 
-| Feature                           | Description                                                           |
-| --------------------------------- | --------------------------------------------------------------------- |
-| Improve `retainAll` & `rejectAll` | optimize implementation of `retainAll` & `rejectAll` with `dropWhile` |
-| Additional constructor            | a curried-style constructor for the iterator                          |
-| `tail$`                           | returns the last element and drops it                                 |
-| `uncons`                          | removes the head from a list and returns it                           |
-| `mapIndexed`                      | transform each element with a given index                             |
-| `find`                            | returns the first element which fulfills a given predicate            |
-| `count`                           | the number of all elements                                            |
-| `max$`                            | the max item of all elements                                          |
-| `min$`                            | the min item of all elements                                          |
-| `zip`                             | combines to iterables with one element each                           |
-| `zipWith`                         | combines to iterables with one element each by a given function       |
-| `zipWithIndex`                    | combines an iterable with its indices                                 |
-| `concat$`                         | attaches one iterator to another                                      |
-| `sort$`                           | sorts all elements by a given function                                |
+| Feature                           | Description                                                                                               |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Improve `retainAll` & `rejectAll` | Simplify the implementation of `retainAll` & `rejectAll` using `dropWhile`.                               |
+| Additional constructor            | A curried-style constructor for the iterator.                                                             |
+| `tail$`                           | Returns the last element and drops it.                                                                    |
+| `uncons`                          | Removes the head from a list and returns it.                                                              |
+| `mapIndexed`                      | Pass the index as well into the mapper.                                                                   |
+| `find`                            | Returns the first element which fulfills a given predicate.                                               |
+| `count$`                          | Returns the number of all elements.                                                                       |
+| `max$`                            | The max item of all elements.                                                                             |
+| `min$`                            | The min item of all elements.                                                                             |
+| `zip`                             | Combines two Kolibri Iterators and returns an Iterator of corresponding pairs.                            |
+| `zipWith`                         | Generalizes `zip` using an arbitrary mapping function to create the new elements of the Kolibri Iterator. |
+| `zipWithIndex`                    | Adds the index to each element of the Kolibri Iterator.                                                   |
+| `sort$`                           | Sorts all elements by a given function.                                                                   |
 
 ## References
 

@@ -31,9 +31,9 @@ The already mentioned framework Log4j is probably the most used for the programm
 * Priorities: Every log statement has specific priorities.
 * Active level: The activated level is used to decide which priorities should be logged.
 * Layout: A log message can be layout/formatted as desired.
-* Appender: Log messages can be sent to different so-called "appenders", which define a special behaviour what to do with the log messages. For example, an `ArrayAppender` could write each log message to an Array.
+* Appender: Log messages can be sent to different so-called "appenders", which define a special behaviour what to do with the log messages. For example, an `ArrayAppender` could write each log message into an Array.
 
-### monad-logger
+### Monad-logger
 
 [Monad-logger](https://github.com/snoyberg/monad-logger) is a logging library for Haskell, a widely known functional programming language. From the monad-logger rather concepts of the implementation are inspired than concrete functionalities. From the monad-logger the idea to have a global log function, which is made available preconfigured on all log levels is taken. Also the idea that a log level should be a small data structure with information about the level is taken from monad-logger.
 
@@ -42,9 +42,9 @@ The already mentioned framework Log4j is probably the most used for the programm
 The following feature set is implemented in the logging library:
 
 * **Different logger levels**: Each logger logs it's messages on a specific logger level (analog to Log4j). A global logging level determines which log messages should be output at the moment.
-* **Raising log levels**: Messages logged on a higher logger level are also output if a lower logging level is active. However, not in the reverse case.
+* **Raising log levels**: Messages logged using a logger on a higher level are also output if a lower logging level is active. However, not in the reverse case.
 * **Context**: Each logger logs its messages on a context. This can be used to identify where the log statement comes from.
-* **Disable contexts**: The logging framework supports that contexts can be restricted to only see log messages from a specific origin.
+* **Restrict contexts**: The logging framework supports that contexts can be restricted. This way, logging messages that are not needed can be ignored.
 * **Formatting of log messages**: The format of the logged message can be defined by the user.
 * **Appender**: There are several predefined appenders that can be used to configure the logging framework. For example, log messages can be added to the `ConsoleAppender` and the `ArrayAppender`. If an appender stores the messages in an internal data structure, they can be retrieved again. Following appenders are implemented:
   * `ConsoleAppender`: Writes log messages to the JavaScript-console
@@ -58,11 +58,15 @@ Modules have been created to divide up the various responsibilities. The followi
 
 <figure><img src="../.gitbook/assets/Logger_Diagramm.drawio.png" alt=""><figcaption><p>Dependency diagram logger modules</p></figcaption></figure>
 
-| Module          | Description                                                                                                              |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `logFactory.js` | Exports a convinence function that simplifies the configuration of the logger and applies an appender to all log levels. |
-| `logger.js`     | Exports all existing `LogLevel`s and preconfigured logging functions for each `LogLevel`.                                |
-| `appender.js`   | Defines different appenders that are used to process LogMessages.                                                        |
+| Module          | Description                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `logFactory.js` | Exports a convenience function that simplifies the configuration of the logger. This way loggers on each level can be created simply.                            |
+| `logger.js`     | Exports all existing `LogLevel`s and preconfigured logging functions for each `LogLevel`. Some configuration functions for the environment are exported as well. |
+| `appender.js`   | Defines different appenders that are used to process LogMessages.                                                                                                |
+
+{% hint style="info" %}
+`appender.js` is representative for all appenders. In fact, each appender forms its own module.
+{% endhint %}
 
 ## Concepts of the implementation
 
@@ -94,6 +98,7 @@ By means of the following function the environment's context is adjusted at runt
 ```javascript
 const myLogContext = "GLOBAL.CONTEXT"
 setGlobalContext(myLogContext);
+// Only messages from loggers whose context starts with "GLOBAL.CONTEXT" are logged.
 ```
 
 #### Logging level
@@ -115,20 +120,20 @@ const loggingLevel = getLoggingLevel();
 
 #### Appender
 
-To process log messages, at least one appender must be defined. An appender is a function that defines for each log level what happens when a message is logged on it. These appenders are managed analog to the logging level.
+To process log messages, at least one appender must be defined. An appender is a function that defines for each log level how a message is logged on it. These appenders are managed analog to the logging level.
 
 Appender can be configured as followed:
 
 ```javascript
-import { ToAppenderList } from "./logger/logger.js";
-import { Appender }       from "./logger/appender/consoleAppender.js";
+import { addToAppenderList } from "./logger/logger.js";
+import { Appender }          from "./logger/appender/consoleAppender.js";
 
 const consoleAppender = Appender();
 addToAppenderList(consoleAppender);
 // Every log message will be logged to the console from now on
 ```
 
-There are some predefined appenders. Custom appenders can be implemented as well. Refer to [Usage of appenders](logging-framework.md#appender-1) to see which appender exist and how new appenders can be developed.
+There are some predefined appenders. Custom appenders can be implemented as well. [Usage of appenders](logging-framework.md#appender-1) can be considered to see which appender exist and how new appenders can be developed.
 
 ### Configuration of loggers
 
@@ -158,10 +163,10 @@ const logger = loggerLevel  => context => formatMsg => msg =>
   (Else(() => False));
 ```
 
-All params passed to the logger function are used to configure the logger and are explained in detail in this section.
+All parameters passed to the logger function are used to configure the logger and are explained in detail in this section.
 
 {% hint style="success" %}
-To avoid wrong configured loggers, this function is not exported. logger functions preconfigured on log levels are exported instead. This is also why this function has been implemented curried: it allows to preconfigure the logger and reuse it at will.
+To avoid wrong configured loggers, the function `logger` is not exported. logger functions preconfigured on log levels are exported instead. This is also why this function has been implemented curried: it allows to preconfigure the logger and reuse it at will.
 {% endhint %}
 
 #### Logger level
@@ -190,13 +195,13 @@ Before a log message is logged a formatting function can be applied to the logge
 
 Messages can be formatted using a function that is passed to the logger. This function has the type `MsgFormatType`. The function takes the following parameters in curried-style:
 
-| Parameter            | Beschreibung                                 |
-| -------------------- | -------------------------------------------- |
-| `context: String`    | The context of this log message.             |
-| `logLevel: String`   | The String representation of this log level. |
-| `logMessage: String` | The message that should be logged.           |
+| Parameter    | Type     | Description                                  |
+| ------------ | -------- | -------------------------------------------- |
+| `context`    | `String` | The context of this log message.             |
+| `logLevel`   | `String` | The string representation of this log level. |
+| `logMessage` | `String` | The message that should be logged.           |
 
-From these parameters, an arbitrarily formatted string can now be compiled, which is then finally also logged.
+From these parameters, an arbitrarily formatted string can now be compiled, which is then finally logged.
 
 For example, the format function can be implemented like this:
 
@@ -217,23 +222,23 @@ let debug = debug(formatLogMsg);
 
 #### Log a message
 
-The preconfigured logger is now ready to log messages using the loglevel, the defined context and the formatting message:
+The preconfigured logger is now ready to log messages on the defined log level using the given context and the message formatting function:
 
 ```javascript
 debug("Andri Wild");
 debug("Tobias Wyss");
-debug("Prof. Dierk König");
+debug("Prof. Dierk Koenig");
 ```
 
 ## Usage
 
 The logging framework is fully modularised and can thus be integrated into an existing or new application.
 
-### Create a logger using the `LogFactory`
+### Create loggers using the `LogFactory`
 
-The simplest way to use the logging framework is to use the `LogFactory`. The `LogFactory` is a convenience function that can be parameterised and returns fully configured loggers at each LogLevel.
+The simplest way to use the logging framework is to create loggers using the `LogFactory`. The `LogFactory` is a convenience function that can be parameterised and returns fully configured loggers at each log level.
 
-This factory can now be used to configure the logging framework as desired.
+This factory can be used to configure the logging framework as desired.
 
 #### Parameter der `LogFactory`
 
@@ -248,7 +253,7 @@ All loggers returned by the log factory will have the same context and the same 
 
 #### Example use of the `LogFactory`
 
-Assumption that the LoggingFramework is located in the same directory under `/logger/`.
+Assumption that the LoggingFramework is located under `/logger/`.
 
 ```javascript
 import { 
@@ -256,11 +261,10 @@ import {
     LOG_ERROR, 
     setGlobalContext, 
     setLoggingLevel 
-} from "./logger/logger.js";
-
+}                     from "./logger/logger.js";
 /* Use a different appender by just importing the appender from another file. */
-import { Appender }   from "logger/appender/consoleAppender.js";
-import { LogFactory } from "logger/logFactory.js";
+import { Appender }   from "./logger/appender/consoleAppender.js";
+import { LogFactory } from "./logger/logFactory.js";
 
 // Configure the environment
 // define a log target
@@ -296,11 +300,11 @@ error("This is a message with loglevel error.");
 
 #### Default appenders
 
-The logging framework offers some preconfigured appenders which are described below:
+The logging framework offers some predefined appenders which are described below:
 
 | Appendername         | Beschreibung                                                     |
 | -------------------- | ---------------------------------------------------------------- |
-| `ConsoleAppender`    | Writes log messages to the JavaScript-console using `console.*`. |
+| `ConsoleAppender`    | Writes log messages to the JavaScript console using `console.*`. |
 | `ArrayAppender`      | Appends log messages on an array                                 |
 | `CountAppender`      | Keeps statistics about the log messages already made.            |
 | `ObservableAppender` | Notifies its listeners when a new log message has arrived.       |
@@ -323,7 +327,7 @@ const Appender = () => ({
   warn:      consoleAppend,
   error:     consoleAppend,
   fatal:     consoleAppend,
-  getValue:  () => {}; // this appende returns no values
+  getValue:  () => {}; // this appender returns no values
 });
 
 /**
@@ -341,13 +345,13 @@ If an appender stores log messages in a data structure, attention must be payed 
 
 #### Use appenders
 
-To use appenders you have to use the provided functions by the module `logger.js`. Following functions are provided by `logger.js` for managing the current loggers:
+To apply appenders the provided functions exported by the module `logger.js` need to be used. Following functions are provided by `logger.js` for managing the current loggers:
 
-| Name                     | Parameters               | Description                                                                                     |
-| ------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------- |
-| `addToAppenderlist()`    | `appender: AppenderType` | Adds a new appender to the loggingframework                                                     |
-| `getAppenderList()`      | -                        | Returns a copy of the array containing all appenders.                                           |
-| `removeFromAppenderList` | `item: AppenderType[]`   | Removes the `item` from the current appenders. A copy of the array of the appender is returned. |
+| Name                     | Parameters               | Description                                                                                      |
+| ------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------ |
+| `addToAppenderlist()`    | `appender: AppenderType` | Adds a new appender to the logging environment                                                   |
+| `getAppenderList()`      | -                        | Returns a copy of the array containing all appenders.                                            |
+| `removeFromAppenderList` | `item: AppenderType`     | Removes the `item` from the current appenders. A copy of the array of the appenders is returned. |
 
 The good thing about globally used appenders is, that it does not matter which appender is used during development. Which appenders should be used can be decided during the testing of the application or even changed at runtime.
 
@@ -384,7 +388,7 @@ debug(lazy(difficultCalculation()));
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-The LogUI is a visual representation of all log messages appended to the ObservableAppender. It can be used to search the log messages or filter them by log level.
+The LogUI is a visual representation of all log messages appended to the `ObservableAppender`. It can be used to search the log messages or filter them by log level.
 
 The UI offers following functions:
 
@@ -398,7 +402,7 @@ The UI offers following functions:
 
 You can use the LogUi in your application by:
 
-Assumption that the logging framework is located in the root under `/logger/`.
+Assumption that the logging framework is located under `/logger/`.
 
 ```javascript
 import { LogFactory }                     from "./logger/logFactory.js";
@@ -423,7 +427,7 @@ const container = document.getElementById("container");
 createLogUi(container);
 ```
 
-For ideas how you could use this in your application, please consider our example. You can find it under `/logger/logUi/example/`.
+For ideas how to use the log ui in an application, please consider the example. The source code can be found [here](https://github.com/wildwyss/Kolibri/tree/main/contrib/p5\_wild\_wyss/src/logger/logUi).
 
 The running example can be found [here](https://wildwyss.github.io/ip5-sample-applications/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html). Note that you have to unwrap it by clicking on the Kolibri logo on the right side.
 
@@ -434,7 +438,7 @@ This section describes further features that could extend the logging framework.
 | Feature                          | Description                                                                                                                                                                                                                           |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LogUi modes                      | When new log messages come into the log ui, the container is scrolled to the bottom. There should be an **inspection mode** which disables incoming of new log messages therefore. This mode should be enabled and disabled manually. |
-| Performance measurement appender | An appender which automatically measures the time between to log messages would be helpful. This could be used for performance measurements.                                                                                          |
+| Performance measurement appender | An appender which automatically measures the time between two log messages would be helpful. This could be used for performance measurements.                                                                                         |
 | log different message types      | At the moment only `String`s or functions which produce a `String` can be logged. It would be helpful to log other things like `Object`s or `Number`s.                                                                                |
 
 ## Glossary
