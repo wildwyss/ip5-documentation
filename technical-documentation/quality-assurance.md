@@ -96,5 +96,5 @@ const Range = (firstBoundary, secondBoundary = 0, step = 1) => {
 
 | Java - Functional Interfaces                   | [https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IP6-Documentation including the Test Framework | [https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) |
+| IP6-Documentation including the Test Framework | [https://dierk.github.io/Home/data/IP6\_Bericht\_Misic\_H%C3%A4fliger.pdf](https://dierk.github.io/Home/data/IP6\_Bericht\_Misic\_H%C3%A4fliger.pdf)                   |
 | jsDoc Homepage                                 | [https://jsdoc.app/](https://jsdoc.app/)                                                                                                                               |
