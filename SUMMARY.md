@@ -7,6 +7,7 @@
   * [Iterator](technical-documentation/iterator.md)
   * [Range](technical-documentation/range.md)
   * [Focus Ring](technical-documentation/focus-ring.md)
+  * [Quality assurance](technical-documentation/quality-assurance.md)
 * [Results](results/README.md)
   * [User tests](results/user-tests.md)
   * [Evaluation of the results](results/evaluation-of-the-results.md)
