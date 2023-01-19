@@ -5,12 +5,12 @@ description: Testing and Documentation
 # Quality assurance
 
 {% hint style="info" %}
-This page describes how we implemented testing and documentation in the code.
+This page describes aspects of quality assurance through testing and documentation.
 {% endhint %}
 
 ## Introduction
 
-To keep the quality of the source code as high as possible, we paid attention to the following points:
+To keep the quality of the source code as high as possible, the following points have been considered:
 
 * achieve high test coverage
 * prevent code duplication
@@ -18,11 +18,11 @@ To keep the quality of the source code as high as possible, we paid attention to
 * split code into multiple files
 * perform code reviews
 
-In the following, we would like to discuss individual points that have been especially helpful to us during the project.
+In the following, some points are explained in more detail, which have contributed significantly to ensuring high quality during the development.
 
 ### Testing
 
-Where possible, we have taken a test-driven approach. Besides that, it was important to us that every feature is tested. To achieve this, we used the Kolibri Test-Suite, which was already implemented in the toolkit. You can find the source code [here](https://github.com/WebEngineering-FHNW/Kolibri/blob/main/docs/src/kolibri/util/test.js).
+A test-driven approach was used where possible. Besides that, it was important to us that every feature is tested. To achieve this, the Kolibri test suite was used, which was already implemented in the toolkit. The source code is located [here](https://github.com/WebEngineering-FHNW/Kolibri/blob/main/docs/src/kolibri/util/test.js).
 
 #### Benefits
 
@@ -32,7 +32,7 @@ Functioning tests are extremely useful during development. It gives a certain sa
 
 This test framework is very easy to use and provides a good overview of successful and failed tests.
 
-Below you can see a screenshot of the summary of our written tests. To organize the tests we used separate test suites for each feature. This allows for a differentiated view.
+Below is a screenshot of the summary of all implemented tests written during the project. To organize the tests, separate test suites have been created for each feature. This allows for a differentiated view.
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Test Summary</p></figcaption></figure>
 
@@ -40,22 +40,22 @@ Below you can see a screenshot of the summary of our written tests. To organize 
 
 #### Benefits
 
-To write robust and sustainable code we used jsDoc. This allows to introduce a kind of type system for JavaScript. The IDE can detect if you are working with the right types. This helps with the implementation but also with the use of the source code.
+To write robust and sustainable code,  jsDoc was used. This allows to introduce a kind of type system for JavaScript. The IDE can detect whether the correct types are being used. This helps with the implementation but also with the use of the source code.
 
 Furthermore, parameters , types and functions can be described in more detail in the code. This is very beneficial for users of the implementations and helps to significantly improve the understanding of the code.
 
 #### Conventions
 
-To achieve good consistency, we have adopted existing concepts from the Kolibri Web Ui Toolkit. For this purpose, the following types are capitalized.
+In order to achieve good consistency, existing concepts from the Kolibri Web Ui Toolkit were adopted. For this purpose, the following types are written in Upper-Camel-Case notation.
 
-* **Callbacks**: Callbacks are functions that are passed to another function. Their type is written in capital letters.
-* **Constructor Functions**: Functions that create an object are called constructors and are written in capital letters.
+* **Callbacks**: Callbacks are functions that are passed to another function. Their type is written in Upper-Camel-Case notation.
+* **Constructor Functions**: Functions that create an object are called constructors and are written in Upper-Camel-Case notation.
 
-To prevent code duplication, we have tried to keep the types as generic as possible. For example, we implemented some callbacks that are known as Functional Interfaces in Java. These types, which could be kept generic and are not only used in a special context, are stored in a seperate file. Such a file is named with `types.js` and can be found for example [here](https://github.com/wildwyss/Kolibri/blob/main/contrib/p5\_wild\_wyss/src/types.js).
+To prevent code duplication, types are kept as generic as possible. As an example, callback types have been created analogous to those known from the Java Functional Interfaces. These types, which could be kept generic and are not only used in a special context, are stored in a separate file. Such a file is named with `types.js` and can be found for example [here](https://github.com/wildwyss/Kolibri/blob/main/contrib/p5\_wild\_wyss/src/types.js).
 
 #### Example
 
-In the following example you can see a detailed description of the range. It is easy to see that special behaviors, which may not be intuitive for everyone, can be described well.
+The following example shows a detailed description of the range constructor. It is easy to see that special behaviors, which may not be intuitive for everyone, can be described well.
 
 ```javascript
 /**
