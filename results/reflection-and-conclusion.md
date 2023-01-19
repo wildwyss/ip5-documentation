@@ -2,7 +2,7 @@
 
 ## Summary
 
-The [Kolibri Web Ui Toolkit ](https://webengineering-fhnw.github.io/Kolibri/)could be extended with the previously documented functionalities. Therefore, the toolkit continues to grow in features and allows programmers who use it to build more stable and robust applications faster and easier. The procedure that led to this result is discussed in the following section. In doing so, the aspects that have been particularly successful and those that we see critical are addressed.
+The [Kolibri Web Ui Toolkit ](https://webengineering-fhnw.github.io/Kolibri/)could be extended with the previously documented functionalities. This fulfills the requirements specified in the project description, whereby even more functionality could be implemented. Therefore, the toolkit continues to grow in features and allows programmers who use it to build more stable and robust applications faster and easier. The procedure that led to this result is discussed in the following section. In doing so, the aspects that have been particularly successful and those that we see critical are addressed.
 
 ## Collaboration
 
@@ -28,7 +28,19 @@ For version management of the code we used a Git repository. For each functional
 
 Another point we want to pay attention to is when we document our work. During this project we collected documentation very close to the implementation. As a result, we had to adapt the documentation several times after changes to the code. In the next project, we will keep track of the documentation as soon as one topic is complete in itself. This makes us more efficient and allows us to use the available time more productively.
 
-### Conclusion
+## Adjusted approaches
+
+In retrospect, we were sometimes on the wrong track. This is normal in the development of software, but should be reflected at this point.
+
+### Logging Framework
+
+At the beginning of the implementation, we fixedly assigned an appender to a logger. This meant that we could neither change the appender nor add more. Originally, the approach was to implement the logger as immutable as possible. However, we had to add an additional state for the appender in the logger. This now allows to remove or add appender during runtime. For more information, consult the [Appender](../technical-documentation/logging-framework.md#appender-1) section.
+
+### Iterator
+
+During the implementation of the iterator, the problem occurred that when copying an iterator, functions already applied to it were not copied as well. In other words, if map was called on an iterator and then copied, the map function was no longer available on the copy. We could solve this problem with a transform function, which is passed to the iterator. At the beginning the function is the id-function. If now a function like map is used on an iterator, the transform function is extended. This happens as described in the section [The Transform Function](../technical-documentation/iterator.md#the-transform-function).
+
+## Conclusion
 
 Above all, it was a great project work for us in which we learned a lot. The most important learning gains for us were the deeper insight into the specification of programming interfaces and how functional programming paradigms in imperative code can help to achieve more robust results.
 
