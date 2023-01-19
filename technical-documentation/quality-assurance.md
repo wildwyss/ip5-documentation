@@ -34,7 +34,7 @@ This test framework is very easy to use and provides a good overview of successf
 
 Below you can see a screenshot of the summary of our written tests. To organize the tests we used separate test suites for each feature. This allows for a differentiated view.
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Test Summary</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Test Summary</p></figcaption></figure>
 
 ### Code documentation
 
