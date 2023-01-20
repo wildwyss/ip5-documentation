@@ -19,7 +19,7 @@ These two parts are roughly paraphrased as part of this introduction. More detai
 
 ### Logging Framework
 
-JavaScript offers the possibility to log to the JS console. However, important features like log priorities or logging to other targets are not supported. For example, it is impossible to evaluate logs. Finding errors in runtime is also very difficult with the existing possibilities.
+JavaScript offers the possibility to log to the web console. However, important features like log priorities or logging to other targets are not supported. For example, it is impossible to evaluate logs. Finding errors in runtime is also very difficult with the existing possibilities.
 
 When addressing the logging framework for the Kolibri, the following is considered:
 
