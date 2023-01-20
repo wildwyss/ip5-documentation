@@ -168,7 +168,7 @@ A typical usage of `transform` looks as follows:
    2. The functionality of the operation (e.g `filter`, `map`, ...) itself is applied to the result.
    3. The transformed value is returned.
 
-For the Operation `map` this looks as follows:
+For the operation `map` this looks as follows:
 
 ```javascript
 // Some code
