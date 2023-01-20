@@ -9,9 +9,9 @@ coverY: 0
 
 ### Initial situation
 
-At the FHNW the [Web UI Toolkit Kolibri](https://webengineering-fhnw.github.io/Kolibri/) is being built with contributions from students. The library includes functional abstractions such as those used in the Haskell Standard Library, test support, utilities for secure handling of HTML/DOM, but also development-related aspects.
+At the FHNW the [Web UI Toolkit Kolibri](https://webengineering-fhnw.github.io/Kolibri/) is being built with contributions from students. The library includes functional abstractions such as those used in the Haskell Standard Library, test support, utilities for secure handling of HTML/DOM and also development-related aspects.
 
-In this project the Kolibri was extended by further functional abstractions. Great importance was attached to the quality of the implementation. This quality is ensured by unit tests, user tests and extreme programming. Care has also been taken to write full JSDoc type definitions to assist developers in using the Kolibri.
+In this project the Kolibri was extended by further functional abstractions. Great importance was attached to the quality of the implementation. This quality is ensured by unit tests, user tests and extreme programming. Care has also been taken to write full JSDoc type definitions to assist developers in using the Kolibri Web UI Toolkit.
 
 During the development, the functional aspects of JavaScript such as partial application, higher order functions, pure functions etc. were used to make the implementations more robust and easier to maintain and test.
 
@@ -26,4 +26,4 @@ The following features were added to the Kolibri Web UI Toolkit in this project:
 
 The usefulness of the developed features was partly already known from other programming languages. Nevertheless, two demo applications were created to show how the abstractions can be used in web development.
 
-In order to identify potential problems with the developed constructs, additional user tests were conducted. In this way, opinions from external people on the usefulness of the new features could be obtained.
+In order to identify potential problems with the developed constructs, additional user tests were conducted. These user tests have shown that the developed constructs can be considered as well understandable and helpful in further projects.&#x20;
