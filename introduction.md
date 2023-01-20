@@ -10,7 +10,7 @@ The quality of the results, documentation and tests are very important.
 
 ## Results
 
-The final artifacts of this IP5 are realized as parts of the [Kolibri Web UI Toolkit](https://webengineering-fhnw.github.io/Kolibri/) (henceforth called Kolibri). The project work can be divided into two parts:&#x20;
+The final artifacts of this IP5 are realized as parts of the Kolibri Web UI Toolkit. The project work can be divided into two parts:&#x20;
 
 1. Logging framework&#x20;
 2. Functional data structures
@@ -19,7 +19,7 @@ These two parts are roughly paraphrased as part of this introduction. More detai
 
 ### Logging Framework
 
-JavaScript offers the possibility to log to the web console. However, important features like log priorities or logging to other targets are not supported. For example, it is impossible to collect and evaluate logs. Finding errors in runtime is also very difficult with the existing possibilities.
+JavaScript offers the possibility to log to the JS console. However, important features like log priorities or logging to other targets are not supported. For example, it is impossible to evaluate logs. Finding errors in runtime is also very difficult with the existing possibilities.
 
 When addressing the logging framework for the Kolibri, the following is considered:
 
@@ -28,7 +28,7 @@ When addressing the logging framework for the Kolibri, the following is consider
 
 ### Functional data structures
 
-In JavaScript there is a definition called [JS iteration protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols). Constructs that conform to these protocols are called iterators and provide a way to generate values. In addition, JavaScript provides convenient language features that make iterators even more attractive.
+In JavaScript there is a definition called JS iteration protocols. Constructs that conform to these protocols are called iterators and provide a way to generate values. In addition, JavaScript provides convenient language features that make iterators even more attractive.
 
 #### Kolibri Iterator
 
