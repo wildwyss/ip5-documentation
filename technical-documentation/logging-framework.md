@@ -373,17 +373,17 @@ const difficultCalculation = () => ...;
 debug(lazy(difficultCalculation()));
 ```
 
-### LogUi
+### LogUI
+
+The LogUI is a visual representation of all log messages appended to the `ObservableAppender`. It can be used to search the log messages or filter them by log level. Following is a screenshot of the [sample application](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html).
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-The LogUI is a visual representation of all log messages appended to the `ObservableAppender`. It can be used to search the log messages or filter them by log level.
-
-The UI offers following functions:
+The LogUI offers following functions:
 
 * Use the **Global Context** field to change the [Global Context](logging-framework.md#global-context) of the environment.
 * Use the **Logging Level** to select the [logging Level](logging-framework.md#log-levels).
-* Use the **Filter** field to display only log messages that contain the entered text
+* Use the **Filter** field to display only log messages that contain the entered text.
 * Select a **chip** to show or hide messages belonging to this [log level](logging-framework.md#log-levels).
 * Use the **RESET** button to clear the log messages container.
 
