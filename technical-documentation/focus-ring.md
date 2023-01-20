@@ -26,13 +26,11 @@ A good application for the Focus Ring could be an image gallery. The user is cur
 
 On mobile devices often a roller is used to select date, time or a month. This is a perfect use case for the Focus Ring as well, since there is always one "chosen" element. Scrolling through the other elements can be realized by moving the focus.
 
-Similar to the date roller on mobile devices, another implementation that uses a Focus Ring is a slot machine. The slot machine has been created during this IP5 to show how Focus Rings could be used in applications. This slot machine uses three focus rings - one for each roller:
+Similar to the date roller on mobile devices, another implementation that uses a Focus Ring is a slot machine. The slot machine has been created during this IP5 to show how Focus Rings could be used in applications. This slot machine uses three focus rings - one for each roller, as shown below:
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>A slot machine where each roller is implemented using a Focus Ring.</p></figcaption></figure>
 
 The working slot machine can be tried out here: [Slot machine demo application](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/focusring/example/SlotMachine.html).
-
-### A Focus Ring for the Kolibri Web UI Toolkit
 
 Based on the concept of the [Kolibri Iterator](iterator.md), a Focus Ring can be implemented with little effort.
 
