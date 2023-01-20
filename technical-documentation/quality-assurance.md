@@ -14,8 +14,8 @@ To keep the quality of the artefacts of this project as high as possible, the fo
 
 * Achieve high test coverage
 * Prevent code duplication
-* Purpose and type is documented in the source code
-* Split code into multiple files
+* Purpose and types of functions and objects are documented in the source code
+* Split code into multiple modules
 * Perform code reviews
 
 In the following, the most important points are explained in more detail. These contribute significantly to quality assurance during development.
