@@ -62,7 +62,7 @@ Modules have been created to divide up the various responsibilities. The followi
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `logFactory.js` | Exports a convenience function that simplifies the configuration of the logger. This way loggers on each level can be created simply.                            |
 | `logger.js`     | Exports all existing `LogLevel`s and preconfigured logging functions for each `LogLevel`. Some configuration functions for the environment are exported as well. |
-| `appender.js`   | Defines different appenders that are used to process LogMessages.                                                                                                |
+| `appender.js`   | Defines different appenders that are used to process log messages.                                                                                               |
 
 {% hint style="info" %}
 `appender.js` is representative for all appenders. In fact, each appender forms its own module.
