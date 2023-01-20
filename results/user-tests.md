@@ -4,15 +4,13 @@ description: Evaluation of the user tests
 
 # User tests
 
-{% hint style="info" %}
 This page describes the results of the user tests. These were conducted in German to make them easier to understand for the participants.
-{% endhint %}
 
 ## Introduction
 
-To test the implemented abstractions developed during this project more widely, user tests have been performed. Attendees were students and web developers who program on a daily basis and are typical users of constructs similar to those found in the Kolibri Web UI Toolkit.
+To test the implemented abstractions developed during this project more widely, user tests have been performed. Attendees were students and web developers who program on a daily basis and are typical users of constructs similar to those found in the Kolibri.
 
-In order to provide the subjects with a realistic environment, they were presented with a skeleton of a simple web application. This skeleton had some comments in it, which were marked with `TODO`. If all these `TODO` comments were replaced with the corresponding solution, the web application was working in the end. The [skeleton](https://github.com/wildwyss/ip5-usertests/blob/empty-test/userTest.js) and [the final application](https://github.com/wildwyss/ip5-usertests/blob/main/docs/userTest.js) can both be found on Github.
+In order to provide the subjects with a realistic environment, they were presented with a skeleton of a simple web application. This skeleton had some comments in it, which were marked with `TODO`. If all these `TODO` comments were replaced with the corresponding solution, the web application was working in the end. The [skeleton](https://github.com/wildwyss/ip5-usertests/blob/empty-test/userTest.js) and [the final application](https://github.com/wildwyss/ip5-usertests/blob/main/docs/userTest.js) can both be found on GitHub.
 
 After the programming part, the test persons had to fill out a questionnaire. Assessments of the comprehensibility and usefulness of the frameworks were queried along with basic opinions. The results are discussed below in this document.
 
