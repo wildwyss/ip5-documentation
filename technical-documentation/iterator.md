@@ -163,7 +163,7 @@ Since every Kolibri Iterator depends on an increment and stop detection function
 A typical usage of `transform` looks as follows:
 
 1. The previous `transform` function is assigned to a local variable.
-2. `transform` is reassigned with a new function
+2. `transform` is reassigned with a new function.
    1. In the new function the previous `transform` operation is applied.
    2. The functionality of the operation (e.g `filter`, `map`, ...) itself is applied to the result.
    3. The transformed value is returned.
