@@ -83,7 +83,7 @@ const hasReachedEnd = (stepIsNegative, next, end) =>
 ```
 
 {% hint style="warning" %}
-If `(right - left) % step` does not result in `0`, the last value of the range is smaller than `right`.
+If `(right - left) % step` does not result in `0`, the last returned value of the range is smaller than `right`.
 {% endhint %}
 
 ### Final implementation of the range
