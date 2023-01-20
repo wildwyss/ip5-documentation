@@ -47,7 +47,7 @@ The following feature set is implemented in the logging library:
 * **Restrict contexts**: The logging framework supports that contexts can be restricted. This way, logging messages that are not needed can be ignored.
 * **Formatting of log messages**: The format of the logged message can be defined by the user.
 * **Appender**: There are several predefined appenders that can be used to configure the logging framework. For example, log messages can be added to the `ConsoleAppender` and the `ArrayAppender`. If an appender stores the messages in an internal data structure, they can be retrieved again. Following appenders are implemented:
-  * `ConsoleAppender`: Writes log messages to the JavaScript-console
+  * `ConsoleAppender`: Writes log messages to the web console.
   * `ArrayAppender`: Wirtes log messages into and array.
   * `CountAppender`: Keeps statistics about the log messages already made.
   * `ObservableAppender`: Notifies its listeners when a new log message has arrived.
