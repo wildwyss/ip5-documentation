@@ -26,7 +26,7 @@ The feedback questionnaire was divided according to the tested abstractions. At 
 
 In general, a range did not cause any major problems or incomprehensibility for the probands. This is probably due to the fact that ranges are also known from other programming languages. Most of the test persons think that a range could be useful in an own project. It was also clear to most that a range can be further processed by other operations. So most assume that `map`, `filter` or even `drop` are available.
 
-The following is an evaluation of whether a range would be an asset in a future project:
+The following chart is an evaluation of whether a range would be an asset in a future project:
 
 <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption><p>Evaluation Range</p></figcaption></figure>
 
@@ -34,7 +34,7 @@ The following is an evaluation of whether a range would be an asset in a future 
 
 The majority of the probands found the Focus Ring to be a simple data structure and think that they are familiar with how this data structure works after performing the programming exercise. All participants see advantages in the fact that the Focus Ring is immutable. More than 75% of them could imagine using this data structure in a future project.
 
-The following is an evaluation of whether a focus ring would be an asset in a future project:
+The following chart is an evaluation of whether a focus ring would be an asset in a future project:
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Evaluation Focusring</p></figcaption></figure>
 
@@ -42,7 +42,7 @@ The following is an evaluation of whether a focus ring would be an asset in a fu
 
 The basic functionalities of the logging framework were clear to the participants. Simple handling questions were answered correctly by all probands. Most also think that they quickly understood the framework. The configuration of the logger via curried style is seen a bit more differentiated. Here some have not been able to see the advantage of this implementation and feel this is unnecessarily complicated. However, everyone agrees that the benefits gained by this logging framework justify the slightly more complicated setup. Most could also imagine using the logging framework in their own application.
 
-The following is an evaluation of whether the logging framework would be an asset in a future project:
+The following chart is an evaluation of whether the logging framework would be an asset in a future project:
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Evaluation Logging-Framework</p></figcaption></figure>
 
