@@ -30,7 +30,7 @@ Similar to the date roller on mobile devices, another implementation that uses a
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>A slot machine where each roller is implemented using a Focus Ring.</p></figcaption></figure>
 
-The working slot machine can be tried out here: [Slot machine demo application](https://wildwyss.github.io/ip5-sample-applications/contrib/p5\_wild\_wyss/src/focusring/example/SlotMachine.html).
+The working slot machine can be tried out here: [Slot machine demo application](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/focusring/example/SlotMachine.html).
 
 ### A Focus Ring for the Kolibri Web UI Toolkit
 
