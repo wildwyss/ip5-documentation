@@ -110,7 +110,7 @@ const Range = (firstBoundary, secondBoundary = 1, step = 1) => {
 To see the range in action the [Examples](range.md#examples) section should be considered.
 
 {% hint style="success" %}
-Since the range returns a specialized [Kolibri Iterator](iterator.md), all the [Kolibri Iterator functions](iterator.md#iterator-functions) can be used with the range as well! So for example it is possible, to `map` over a range and than `reduce` it to a single value.
+Since the range returns a specialized [Kolibri Iterator](iterator.md), all the [Kolibri Iterator functions](iterator.md#iterator-functions) can be used with the range as well! So for example it is possible, to `map` over a range and then `reduce` it to a single value.
 {% endhint %}
 
 ### Instantiation&#x20;
