@@ -14,6 +14,10 @@ The basic functionality of an iterator, the possible operations on it and the ge
 
 An iterator in JavaScript is an object that is implemented in compliance with the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols). An iterator is characterized by the fact that it can only be iterated once over a set of elements. After that the iterator is used up.
 
+{% hint style="info" %}
+When Kolibri Iterator is mentioned in this chapter, the implementation of the Iterator protocol described **here** is referred to. However, if only iterator is mentioned, iterators in general are meant.
+{% endhint %}
+
 #### Iterable vs iterator
 
 In order to be **iterable**, an object must have a property with the key `[Symbol.iterator]`. This property is a function that returns an object containing a function called `next` . The property `[Symbol.iterator]` is called an **iterator**.&#x20;
@@ -22,10 +26,6 @@ In order to be **iterable**, an object must have a property with the key `[Symbo
 
 * `value`: the value that will be returned next
 * `done`: `true` if there are no more values returned by this iterator
-
-{% hint style="info" %}
-When Kolibri Iterator is mentioned in this chapter, the implementation of the Iterator protocol described **here** is referred to. However, if only iterator is mentioned, iterators in general are meant.
-{% endhint %}
 
 ### What can an iterator be used for?
 
