@@ -28,7 +28,7 @@ For version management of the code we used a Git repository. For each functional
 
 Another point we want to pay attention to is when we document our work. During this project we collected documentation very close to the implementation. As a result, we had to adapt the documentation several times after changes to the code. In the next project, we will keep track of the documentation as soon as one topic is complete in itself. This makes us more efficient and allows us to use the available time more productively.
 
-## Adjusted approaches
+## Discarded development approaches
 
 In retrospect, we were sometimes on the wrong track. This is normal in the development of software, but should be reflected at this point.
 
