@@ -122,7 +122,7 @@ const loggingLevel = getLoggingLevel();
 
 To process log messages, at least one appender must be defined. An appender is an object that defines per log level how a message is logged. These appenders are managed analog to the logging level.
 
-Appender can be configured as followed:
+Appenders can be configured as followed:
 
 ```javascript
 import { addToAppenderList } from "./logger/logger.js";
