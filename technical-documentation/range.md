@@ -37,7 +37,7 @@ The example above from Haskell shows very nicely how a range can be processed fu
 
 There are no built-in ranges in JavaScript. Since JavaScript is a functional programming language at its core and also allows many functional paradigms, it is quite desirable to have similar possibilities with ranges that for example the functional programming language Haskell offers.&#x20;
 
-Therefore a range is added to the Kolibri Web UI Toolkit. Under the hood, the range uses a [Kolibri Iterator](iterator.md). Therefore, all [Kolibri Iterator operations](iterator.md#iterator-functions) can also be performed on the range.
+Therefore a range is added to the Kolibri. Under the hood, the range uses a [Kolibri Iterator](iterator.md). Therefore, all [Kolibri Iterator operations](iterator.md#iterator-functions) can also be performed on the range.
 
 ## Research
 
