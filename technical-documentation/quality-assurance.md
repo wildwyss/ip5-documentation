@@ -5,7 +5,7 @@ description: Testing and documentation
 # Quality assurance
 
 {% hint style="info" %}
-This page describes how the quality of this projects is assured through testing and documentation.
+This page describes how the quality of this project is assured through testing and documentation.
 {% endhint %}
 
 ## Introduction
