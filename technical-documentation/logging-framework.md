@@ -56,7 +56,7 @@ The following feature set is implemented in the logging library:
 
 Modules have been created to divide up the various responsibilities. The following diagram illustrates the dependencies of the modules:
 
-<figure><img src="../.gitbook/assets/Logger_Diagramm.drawio.png" alt=""><figcaption><p>Dependency diagram logger modules</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Logger_Diagramm.drawio (1).png" alt=""><figcaption><p>Dependency diagram logger modules</p></figcaption></figure>
 
 | Module          | Description                                                                                                                                                      |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -93,7 +93,7 @@ The term "logging level" refers to the lowest level that a log message must have
 
 The environment provides one global context. This globally active context is implemented in the module `logger.js` and represents a variable string. A log message is logged only if the environment's context is a prefix of the log message context.
 
-By means of the following function the environment's context is adjusted at runtime. So it is possible to only show log messages which have a specific context.
+By means of the following function the environments context is adjusted at runtime. So it is possible to only show log messages which have a specific context.
 
 ```javascript
 const myLogContext = "GLOBAL.CONTEXT"
