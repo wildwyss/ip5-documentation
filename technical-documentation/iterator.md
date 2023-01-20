@@ -89,7 +89,7 @@ For the Kolibri Iterator to work as expected, the following points must be consi
 * Operations with the `$`-suffix in their names must not be applied to infinite iterators.
 {% endhint %}
 
-### Iterator example
+### `Iterator` example
 
 The following example creates a Kolibri Iterator which returns a sequence of numbers starting with 0 up to 99.
 
@@ -111,9 +111,9 @@ it.retainAll(x => x < 10 || x > 90 )
 ```
 {% endcode %}
 
-### ArrayIterator example
+### `ArrayIterator` example
 
-This example shows how to create an `ArrayIterator` using an array. The `ArrayIterator` then offers all Kolibri Iterator operations on arrays.
+The next example shows how to create an `ArrayIterator` using an array. The `ArrayIterator` then offers all Kolibri Iterator operations on arrays.
 
 {% code lineNumbers="true" %}
 ```javascript
