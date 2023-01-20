@@ -138,7 +138,7 @@ for (const element of arrayIterator) {
 
 When `next` is called for the first time on the Kolibri Iterator, the initial value is returned. However, for the iterator to work correctly, the next value must be calculated each time `next` is called. Thus, the first time the `next` function is called, the second value is generated and remembered, but the previous value is returned.
 
-Thus a pre-calculation takes place, in which the next value is calculated in each case in the present iteration.
+This way a pre-calculation takes place, in which the next value is calculated in in the present iteration.
 
 ### The `transform` function
 
