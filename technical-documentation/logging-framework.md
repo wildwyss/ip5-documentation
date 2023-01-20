@@ -426,7 +426,7 @@ This section describes further features that could extend the logging framework.
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LogUI modes                      | When new log messages come into the LogUI, the container is scrolled to the bottom. There should be an **inspection mode** which disables the income of new log messages therefore. This mode has to be enabled and disabled manually. |
 | Performance measurement appender | An appender which automatically measures the time between two log messages would be helpful. This could be used for performance measurements.                                                                                          |
-| Log different message types      | At the moment only `String`s or functions which produce a `String` can be logged. It would be helpful to log other things like `Object`s or `Number`s.                                                                                 |
+| log different message types      | At the moment only `String`s or functions which produce a `String` can be logged. It would be helpful to log other things like `Object`s or `Number`s.                                                                                 |
 
 ## References
 

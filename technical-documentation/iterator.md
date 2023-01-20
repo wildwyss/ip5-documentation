@@ -5,7 +5,7 @@ description: An iterator for the Kolibri Web UI Toolkit
 # Iterator
 
 {% hint style="info" %}
-The basic functionality of an iterator, the possible operations on it and the general usage of the API are considered in depth.
+The basic functionality of an iterator, the possible operations on it and the general usage of the API are considered in-depth in this section.
 {% endhint %}
 
 ## Introduction
