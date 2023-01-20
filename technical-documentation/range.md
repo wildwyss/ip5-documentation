@@ -54,11 +54,11 @@ Since it seems more intuitive to have both borders inclusive, the range for Koli
 
 ## Implementation
 
-Since the range is implemented using a [Kolibri Iterator](iterator.md), it is built on the three components `startValue`, `incrementFunction` & `stopDetected`.
+Since the range is implemented using a Kolibri Iterator, it is built on the three components `startValue`, `incrementFunction` & `stopDetected`.
 
 ### Normalization of the boundaries
 
-Since the boundaries of the range are interchangeable and the step can be a positive or negative integer, the first boundary and the second boundary are normalized at first. Depending on the step value, this normalization is used to find out which boundary contains the first number to be produced and which the last. The new normalized boundaries are then both stored as local const `left` and `right`. The value `left` will be used as starting value in the [Kolibri Iterator](iterator.md), `right` for the stop detection.
+Since the boundaries of the range are interchangeable and the step can be a positive or negative integer, the first boundary and the second boundary are normalized at first. Depending on the step value, this normalization is used to find out which boundary contains the first number to be produced and which the last. The new normalized boundaries are then both stored as local const `left` and `right`. The value `left` will be used as starting value in the Kolibri Iterator, `right` for the stop detection.
 
 This normalization process is explained by the following flow chart diagram:
 
