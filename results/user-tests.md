@@ -40,7 +40,7 @@ The following is an evaluation of whether a focus ring would be an asset in a fu
 
 ### Logging Framework
 
-The basic functionalities of the logging framework were clear to the participants. Simple handling questions were answered correctly by all probands. Most also think that they quickly understood the framework. The configuration of the logger via curried-style is seen a bit more differentiated. Here some have not been able to see the advantage of this implementation and feel this is unnecessarily complicated. However, everyone agrees that the benefits gained by this logging framework justify the slightly more complicated setup. Most could also imagine using the logging framework in their own application.
+The basic functionalities of the logging framework were clear to the participants. Simple handling questions were answered correctly by all probands. Most also think that they quickly understood the framework. The configuration of the logger via curried style is seen a bit more differentiated. Here some have not been able to see the advantage of this implementation and feel this is unnecessarily complicated. However, everyone agrees that the benefits gained by this logging framework justify the slightly more complicated setup. Most could also imagine using the logging framework in their own application.
 
 The following is an evaluation of whether the logging framework would be an asset in a future project:
 
