@@ -50,11 +50,11 @@ To demonstrate the Focus Ring (and thus also the range and the Kolibri Iterator)
 
 <figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption><p>The slot machine shows how Focus Rings can be used.</p></figcaption></figure>
 
-
-
 ## Methodology
 
 Because this IP5 is not a typical implementation project, but a research project, the outcome of the implemented artifacts is open at the beginning. Therefore, the process of approaching the task is also different. For this reason, it is more difficult to estimate the results based on the task. In order to ensure and evaluate the progress of the work nevertheless, an incremental approach to solve the problem statement is taken. This incremental progress was assessed through weekly site reviews. Based on this evaluation, the goals for the next work steps have been defined.
+
+To ensure maintainability and clarity in the code, a contract is defined for some edge cases. This shifts some of the responsibility for handling the artifacts to the users of the library. The contract is written in the JSDoc definition of the corresponding functionalities and also in the [technical documentation](technical-documentation/).
 
 ## Readers guide
 
