@@ -50,11 +50,11 @@ The following figure demonstrates what happens when the focus is shifted to the 
 
 <figure><img src="../.gitbook/assets/focus-right.jpg" alt=""><figcaption><p>What happens when the focus is moved right and post has only one element?</p></figcaption></figure>
 
-`pre` is reversed and replaces `post`. The element focused before will become the only element in `pre`. In focus is now the element, that was previously the last of `pre`. IThis is how a ring is formed.
+`pre` is reversed and replaces `post`. The element focused before will become the only element in `pre`. In focus is now the element, that was previously the last of `pre`. This is how a ring is formed.
 
 ### Moving the focus to the left
 
-The following figure demonstrates what happens when the focus tried to shift to the left, but `pre` is empty:
+The following figure demonstrates what happens when the focus is tried to shift to the left, but `pre` is empty:
 
 <figure><img src="../.gitbook/assets/focus-left (2).jpg" alt=""><figcaption><p>What happens when the focus is moved left and pre is empty?</p></figcaption></figure>
 
