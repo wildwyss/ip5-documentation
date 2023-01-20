@@ -99,7 +99,7 @@ import { Iterator } from "./iterator/iterator.js";
 // create an Iterator
 const it = Iterator(0, value => value + 1, value => value < 100);
 
-// process the stream of numbers
+// process the sequence of numbers
 it.retainAll(x => x < 10 || x > 90 )
   .map(x => 10 * x)
   .copy()
