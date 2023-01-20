@@ -5,7 +5,7 @@ description: A logging framework for the Kolibri Web UI Toolkit
 # Logging framework
 
 {% hint style="info" %}
-This section describes the logging framework. The features, implementation and usage are considered in depth. For a quick start on how to use it the part [Usage](logging-framework.md#usage) can be viewed.
+This section describes the logging framework. The features, implementation and usage are considered in-depth. For a quick start on how to use it the part [Usage](logging-framework.md#usage) can be viewed.
 {% endhint %}
 
 ## Introduction
@@ -144,7 +144,7 @@ There is only one logging environment, but there are any number of loggers. Thes
 The core of the logger is the following function:
 
 ```javascript
-const logger = loggerLevel  => context => formatMsg => msg =>
+const logger = loggerLevel => context => formatMsg => msg =>
   LazyIf(
       // determines if log messages should be logged or not
       messageShouldBeLogged(loggerLevel)(context)
