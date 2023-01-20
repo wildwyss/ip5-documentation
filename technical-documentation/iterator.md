@@ -1,5 +1,5 @@
 ---
-description: An Iterator for the Kolibri Web UI Toolkit
+description: An iterator for the Kolibri Web UI Toolkit
 ---
 
 # Iterator

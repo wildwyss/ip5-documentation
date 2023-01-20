@@ -1,2 +1,0 @@
-# Evaluation of the results
-

@@ -5,7 +5,7 @@ description: A logging framework for the Kolibri Web UI Toolkit
 # Logging framework
 
 {% hint style="info" %}
-This section describes the logging framework. The features, implementation and usage are considered in depth. For a quick start on how to use it head directly to the part [Usage](logging-framework.md#usage).
+This section describes the logging framework. The features, implementation and usage are considered in depth. For a quick start on how to use it the part [Usage](logging-framework.md#usage) can be viewed.
 {% endhint %}
 
 ## Introduction
@@ -427,7 +427,7 @@ createLogUi(container);
 
 For ideas how to use the log ui in an application, please consider the example. The source code can be found [here](https://github.com/wildwyss/Kolibri/tree/main/contrib/p5\_wild\_wyss/src/logger/logUi).
 
-The running example can be found [here](https://wildwyss.github.io/ip5-sample-applications/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html). Note that you have to unwrap it by clicking on the Kolibri logo on the right side.
+The running example can be found [here](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html). Note that you have to unwrap it by clicking on the Kolibri logo on the right side.
 
 ## Future features
 

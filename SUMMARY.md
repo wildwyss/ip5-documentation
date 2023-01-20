@@ -10,5 +10,4 @@
   * [Quality assurance](technical-documentation/quality-assurance.md)
 * [Results](results/README.md)
   * [User tests](results/user-tests.md)
-  * [Evaluation of the results](results/evaluation-of-the-results.md)
   * [Reflection & conclusion](results/reflection-and-conclusion.md)

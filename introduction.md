@@ -44,9 +44,9 @@ The Focus Ring is a simple, immutable data structure whose elements are arranged
 
 ### Demo applications
 
-The logging framework is demonstrated as a UI logger. Each log statement is displayed directly on the UI. This demonstrates the extensibility of the framework. A running demo can be found [here](https://wildwyss.github.io/ip5-sample-applications/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html).
+The logging framework is demonstrated as a UI logger. Each log statement is displayed directly on the UI. This demonstrates the extensibility of the framework. A running demo can be found [here](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html).
 
-To demonstrate the Focus Ring (and thus also the Range and the Kolibri Iterator) a slot machine was built that has three rollers. Each of these rollers is implemented using a Focus Ring. A running demo can be found [here](https://wildwyss.github.io/ip5-sample-applications/contrib/p5\_wild\_wyss/src/focusring/example/SlotMachine.html).
+To demonstrate the Focus Ring (and thus also the Range and the Kolibri Iterator) a slot machine was built that has three rollers. Each of these rollers is implemented using a Focus Ring. A running demo can be found [here](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/focusring/example/SlotMachine.html).
 
 <figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption><p>The slot machine shows how Focus Rings can be used.</p></figcaption></figure>
 
