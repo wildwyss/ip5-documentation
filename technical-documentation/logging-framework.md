@@ -248,15 +248,13 @@ This factory can be used to configure the logging framework as desired.
 | `context`      | `String`           | The [context](logging-framework.md#logger-context) of the logger.                                     |
 | `formatMsg`    | `FormatLogMessage` | A [function that formats log messages](logging-framework.md#format-message) before they are appended. |
 
-
-
 {% hint style="info" %}
 All loggers returned by the log factory will have the same context and the same formatter. They differ only in their log levels.
 {% endhint %}
 
 #### Example use of the `LogFactory`
 
-Assumption that the LoggingFramework is located under `/logger/`.
+Assumption that the LoggingFramework is located under `logger/`.
 
 ```javascript
 import { 
