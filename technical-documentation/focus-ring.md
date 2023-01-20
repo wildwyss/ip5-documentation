@@ -36,7 +36,7 @@ Based on the concept of the [Kolibri Iterator](iterator.md), a Focus Ring can be
 
 ## Features
 
-* **Immutability:** The Focus Ring is created as an immutable data structure. Meaning, a change a of the data structure returns a new object.
+* **Immutability:** The Focus Ring is created as an immutable data structure. Meaning, a change of the data structure returns a new object.
 * **Direct access:** The focus of the ring can be accessed with O(1).
 * **Never ending iteration:** The implementation of the Focus Ring is made in such a way that an end of the elements cannot be reached. Instead, the iteration starts again with the first element.
 
