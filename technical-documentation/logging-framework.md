@@ -70,7 +70,7 @@ Modules have been created to divide up the various responsibilities. The followi
 
 ## Concepts of the implementation
 
-This section describes the logging framework conceptually. Refer to [Usage](logging-framework.md#usage) to see it in action.
+This section describes the logging framework conceptually.
 
 Roughly speaking, the logging framework has two aspects that need to be distinguished:
 
@@ -83,7 +83,7 @@ A logger, on the other hand, defines the "how". A logger defines how a logging m
 
 {% hint style="info" %}
 **logging level vs. logger level**\
-The term "logging level" refers to the lowest level that a log message must have in order to be logged. It ist configured on the environment.\
+The term "logging level" refers to the lowest level that a log message must have in order to be logged. It is configured on the environment.\
 "Logger level", on the other hand, refers to the priority with which the respective logger writes log messages.
 {% endhint %}
 
