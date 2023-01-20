@@ -199,7 +199,7 @@ This section describes further features that could extend the Kolibri Iterator.
 | Feature                           | Description                                                                                               |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | Improve `retainAll` & `rejectAll` | Simplify the implementation of `retainAll` & `rejectAll` using `dropWhile`.                               |
-| Additional constructor            | A curried-style constructor for the iterator.                                                             |
+| Additional constructor            | A curried style constructor for the iterator.                                                             |
 | `tail$`                           | Returns the last element and drops it.                                                                    |
 | `uncons`                          | Removes the head from a list and returns it.                                                              |
 | `mapIndexed`                      | Pass the index as well into the mapper.                                                                   |
@@ -214,7 +214,7 @@ This section describes further features that could extend the Kolibri Iterator.
 
 ## References
 
-| JavaScript iteration protocols                    | [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols)                           |
+| JS iteration protocols                            | [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols)                           |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Visualization of many Kolibri Iterator operations | [https://rxmarbles.com/](https://rxmarbles.com/)                                                                                                                                                           |
 | `cons` operator in Haskell                        | [https://hackage.haskell.org/package/bytestring-0.11.3.1/docs/Data-ByteString-Lazy-Char8.html#v:cons](https://hackage.haskell.org/package/bytestring-0.11.3.1/docs/Data-ByteString-Lazy-Char8.html#v:cons) |
