@@ -348,11 +348,11 @@ If an appender stores log messages in a data structure, attention must be payed 
 
 To apply appenders the provided functions exported by the module `logger.js` need to be used. Following functions are provided by `logger.js` for managing the current loggers:
 
-| Name                     | Parameters               | Description                                                                                      |
-| ------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------ |
-| `addToAppenderlist()`    | `appender: AppenderType` | Adds a new appender to the logging environment                                                   |
-| `getAppenderList()`      | -                        | Returns a copy of the array containing all appenders.                                            |
-| `removeFromAppenderList` | `item: AppenderType`     | Removes the `item` from the current appenders. A copy of the array of the appenders is returned. |
+| Name                     | Parameters               | Description                                                                                  |
+| ------------------------ | ------------------------ | -------------------------------------------------------------------------------------------- |
+| `addToAppenderlist()`    | `appender: AppenderType` | Adds a new appender to the logging environment.                                              |
+| `getAppenderList()`      | -                        | Returns a copy of the array containing all appenders.                                        |
+| `removeFromAppenderList` | `item: AppenderType`     | Removes `item` from the current appenders. A copy of the array of the appenders is returned. |
 
 The good thing about globally used appenders is, that it does not matter which appender is used during development. Which appenders should be used can be decided during the testing of the application or even changed at runtime.
 
