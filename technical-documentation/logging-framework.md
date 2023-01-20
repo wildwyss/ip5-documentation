@@ -389,9 +389,7 @@ The LogUI offers following functions:
 
 #### Usage
 
-You can use the LogUi in your application by:
-
-Assumption that the logging framework is located under `/logger/`.
+Assuming the logging framework located under `logger/`, the LogUI can be used in an application like:
 
 ```javascript
 import { LogFactory }                     from "./logger/logFactory.js";
