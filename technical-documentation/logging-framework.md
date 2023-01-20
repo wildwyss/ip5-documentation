@@ -367,7 +367,7 @@ debug("Tobias Wyss");
 
 ```
 
-#### lazy logging
+#### Lazy logging
 
 If a log message depends on more complex calculations, it can also be evaluated lazy. Using this functionality the log message is only evaluated if it is really logged.
 
