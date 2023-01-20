@@ -303,12 +303,12 @@ error("This is a message with loglevel error.");
 
 The logging framework offers some predefined appenders which are described below:
 
-| Appendername         | Beschreibung                                                     |
-| -------------------- | ---------------------------------------------------------------- |
-| `ConsoleAppender`    | Writes log messages to the JavaScript console using `console.*`. |
-| `ArrayAppender`      | Appends log messages on an array                                 |
-| `CountAppender`      | Keeps statistics about the log messages already made.            |
-| `ObservableAppender` | Notifies its listeners when a new log message has arrived.       |
+| Appendername         | Beschreibung                                               |
+| -------------------- | ---------------------------------------------------------- |
+| `ConsoleAppender`    | Writes log messages to the web console using `console.*`.  |
+| `ArrayAppender`      | Appends log messages on an array                           |
+| `CountAppender`      | Keeps statistics about the log messages already made.      |
+| `ObservableAppender` | Notifies its listeners when a new log message has arrived. |
 
 #### Custom appenders
 
