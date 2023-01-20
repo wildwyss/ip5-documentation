@@ -5,7 +5,7 @@ description: A Focus Ring for the Kolibri Web UI Toolkit
 # Focus Ring
 
 {% hint style="info" %}
-This section explains how a Focus Ring works internally and how it can be used by developers.
+This section explains the concept of the data structure Focus Ring, how it works internally and how it can be used by developers.
 {% endhint %}
 
 ## Introduction
