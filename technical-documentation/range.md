@@ -50,7 +50,7 @@ Since it seems more intuitive to have both borders inclusive, the range for Koli
 * **Parametrization**: The range can be initialized with 1-3 parameters. The parameters specify the lower limit, the upper limit and the step size. If not all parameters are set the range uses suitable default values.
 * **Interchangeable boundaries:** Lower and upper limit can be interchanged when creating a new range.
 * **Negative boundaries & step**: The boundaries and the step size of the range can be positive or negative integers.&#x20;
-* **Iteration protocols**: The range is compliant with the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols) and is implemented using a Kolibri Iterator.
+* **Iteration protocols**: The range is implemented using a Kolibri Iterator and is therefore compliant with the JS iteration protocols.
 
 ## Implementation
 
