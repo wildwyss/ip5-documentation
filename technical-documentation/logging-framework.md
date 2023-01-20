@@ -428,17 +428,6 @@ This section describes further features that could extend the logging framework.
 | Performance measurement appender | An appender which automatically measures the time between two log messages would be helpful. This could be used for performance measurements.                                                                                          |
 | log different message types      | At the moment only `String`s or functions which produce a `String` can be logged. It would be helpful to log other things like `Object`s or `Number`s.                                                                                 |
 
-## Glossary
-
-| Term      | Description                                                                                                                                 |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Appender  | Appenders are used to log messages to different targets. Refer the section [Features](logging-framework.md#features) for more informations. |
-| Factory   | A class or method which creates objects.                                                                                                    |
-| immutable | A data structure or variable which can no be changed.                                                                                       |
-| lazy      | An expression is called lazy, if it's evaluated at the time it is used.                                                                     |
-| Priority  | Describes the level of a log message.                                                                                                       |
-| pure      | Functions which do not have a side effect are called pure.                                                                                  |
-
 ## References
 
 | Apache Log4J | [https://logging.apache.org/log4j/2.x/](https://logging.apache.org/log4j/2.x/)       |

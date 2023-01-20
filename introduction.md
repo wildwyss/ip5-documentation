@@ -62,6 +62,17 @@ Because this IP5 is not a typical implementation project, but a research project
 
 Readers interested primarily in the results are referred directly to the [Results](introduction.md#results) section at this point.
 
+### Special terms
+
+The following terms might be unknown to some readers and are explained therefore.
+
+| Term      | Description                                                             |
+| --------- | ----------------------------------------------------------------------- |
+| Factory   | A class or method which creates objects.                                |
+| immutable | A data structure or variable which can no be changed.                   |
+| lazy      | An expression is called lazy, if it's evaluated at the time it is used. |
+| pure      | Functions which do not have a side effect are called pure.              |
+
 ## References
 
 | Project description | [22HS\_IMVS37](https://wildwyss.github.io/ip5-overview/22HS\_IMVS37%20Funktionale%20Standard%20Library%20f%C3%BCr%20das%20Kolibri%20Web%20UI%20Toolkit.pdf) |
