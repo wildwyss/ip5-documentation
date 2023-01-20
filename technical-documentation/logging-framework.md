@@ -31,7 +31,7 @@ The already mentioned framework Log4j is probably the most used for the programm
 * Priorities: Every log statement has a specific priority (also called log level).
 * Active level: The activated level is used to decide which priorities should be logged.
 * Layout: A log message can be layout/formatted as desired.
-* Appender: Log messages can be sent to different so-called "appenders", which define a special behaviour what to do with the log messages. For example, an `ArrayAppender` could write each log message into an Array.
+* Appender: Log messages can be sent to different so-called "appenders", which define a special behaviour what to do with the log messages. For example, an `ArrayAppender` could write each log message into an array.
 
 ### Monad-logger
 
