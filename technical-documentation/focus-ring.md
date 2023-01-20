@@ -44,11 +44,15 @@ Based on the concept of the Kolibri Iterator, a Focus Ring can be implemented wi
 
 The Focus Ring is internally implemented with two Kolibri Iterators, which are subsequently called `pre` and `post`. The following figures illustrate the internal handling of the iterators when the focus is shifted several times in one direction. The element that is in focus is always the head element of `post` and is drawn in purple.
 
-The following figure demonstrates what happens when the focus is shifted to the right, but no more element is on the right side focus:
+### Moving the focus to the right
+
+The following figure demonstrates what happens when the focus is shifted to the right, but no more element is on the right side of the focus:
 
 <figure><img src="../.gitbook/assets/focus-right.jpg" alt=""><figcaption><p>What happens when the focus is moved right and post has only one element?</p></figcaption></figure>
 
 `pre` is reversed and replaces `post`. The element focused before will become the only element in `pre`. In focus is now the element, that was previously the last of `pre`. IThis is how a ring is formed.
+
+### Moving the focus to the left
 
 The following figure demonstrates what happens when the focus tried to shift to the left, but `pre` is empty:
 
