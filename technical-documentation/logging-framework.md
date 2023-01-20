@@ -226,6 +226,9 @@ The preconfigured logger is now ready to log messages on the defined log level u
 debug("Andri Wild");
 debug("Tobias Wyss");
 debug("Prof. Dierk Koenig");
+// following is logged: 
+// ch.fhnw.ip5: [DEBUG] 2023-01-20T14:28:45.241Z: Andri Wild
+// ...
 ```
 
 ## Usage
