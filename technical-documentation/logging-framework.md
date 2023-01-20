@@ -358,24 +358,12 @@ The good thing about globally used appenders is, that it does not matter which a
 
 The second handy thing about appenders generally is, that they offer the ability to extend the logging framework with custom appenders as described above in the section [custom appenders](logging-framework.md#custom-appenders).
 
-### Log messages
-
-If the logger has been completely configured, any text message can be logged:
-
-```javascript
-// retrieve log functions from a configured LogFactory
-const { debug, error } = ...;
-
-debug("Tobias Wyss");
-
-```
-
-#### Lazy logging
+### Lazy logging
 
 If a log message depends on more complex calculations, it can also be evaluated lazy. Using this functionality the log message is only evaluated if it is really logged.
 
 ```javascript
-import { lazy } from "logger/lambdaCalculus.js"
+import { lazy } from "./logger/lambdaCalculus.js"
 // retrieve log functions from a configured LogFactory
 const { debug, error } = ...;
 
