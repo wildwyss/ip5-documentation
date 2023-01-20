@@ -28,7 +28,7 @@ When addressing the logging framework for the Kolibri, the following is consider
 
 ### Functional data structures
 
-In JavaScript there is a definition called JS iteration protocols. Constructs that conform to these protocols are called iterators and provide a way to generate values. In addition, JavaScript provides convenient language features that make iterators even more attractive.
+In JavaScript there is a definition called [JS iteration protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols). Constructs that conform to these protocols are called iterators and provide a way to generate values. In addition, JavaScript provides convenient language features that make iterators even more attractive.
 
 #### Kolibri Iterator
 
