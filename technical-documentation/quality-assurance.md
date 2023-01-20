@@ -1,5 +1,5 @@
 ---
-description: Testing and Documentation
+description: Testing and documentation
 ---
 
 # Quality assurance
@@ -10,50 +10,50 @@ This page describes aspects of quality assurance through testing and documentati
 
 ## Introduction
 
-To keep the quality of the source code as high as possible, the following points have been considered:
+To keep the quality of the artefacts of this project as high as possible, the following points have been considered:
 
-* achieve high test coverage
-* prevent code duplication
-* purpose and type is documented in the source code
-* split code into multiple files
-* perform code reviews
+* Achieve high test coverage
+* Prevent code duplication
+* Purpose and type is documented in the source code
+* Split code into multiple files
+* Perform code reviews
 
-In the following, some points are explained in more detail, which have contributed significantly to ensuring high quality during the development.
+In the following, the most important points are explained in more detail. These contribute significantly to quality assurance during development.
 
-### Testing
+## Testing
 
-A test-driven approach was used where possible. Besides that, it was important to us that every feature is tested. To achieve this, the Kolibri test suite was used, which was already implemented in the toolkit. The source code is located [here](https://github.com/WebEngineering-FHNW/Kolibri/blob/main/docs/src/kolibri/util/test.js).
+A test-driven approach was used where possible. In addition, care has been taken to ensure that every feature is tested. To achieve this, the Kolibri test suite was used, which was already implemented in the toolkit. The source code is located [here](https://github.com/WebEngineering-FHNW/Kolibri/blob/main/docs/src/kolibri/util/test.js).
 
-#### Benefits
+### Benefits
 
 Functioning tests are extremely useful during development. It gives a certain safety when things are changed or added. Finally, by using tests, progress is greater because bugs and inconsistencies can be found more quickly.
 
-#### Usage
+### Usage
 
 This test framework is very easy to use and provides a good overview of successful and failed tests.
 
-Below is a screenshot of the summary of all implemented tests written during the project. To organize the tests, separate test suites have been created for each feature. This allows for a differentiated view.
+Below is a screenshot of the summary of all implemented tests written during the project. To organize the tests, each feature has its own test suite.
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption><p>Test Summary</p></figcaption></figure>
 
-### Code documentation
+## Code documentation
 
-#### Benefits
+### Benefits
 
-To write robust and sustainable code,  jsDoc was used. This allows to introduce a kind of type system for JavaScript. The IDE can detect whether the correct types are being used. This helps with the implementation but also with the use of the source code.
+The whole code base is documented with JSDoc. Thus, the untyped language JavaScript can be supplemented with a working type safety. The IDE support is very large and recognizes whether the correct types are used. This helps with the implementation but also with the use of the source code.
 
-Furthermore, parameters , types and functions can be described in more detail in the code. This is very beneficial for users of the implementations and helps to significantly improve the understanding of the code.
+Furthermore, parameters, types and functions can be described in more detail in the code. This is very beneficial for users of the implementations and helps to significantly improve the understanding of the code.
 
-#### Conventions
+### Conventions
 
-In order to achieve good consistency, existing concepts from the Kolibri Web Ui Toolkit were adopted. For this purpose, the following types are written in Upper-Camel-Case notation.
+In order to achieve good consistency, existing concepts from the Kolibri Web UI Toolkit were adopted. For this purpose, the following types are written in UpperCamelCase notation.
 
-* **Callbacks**: Callbacks are functions that are passed to another function. Their type is written in Upper-Camel-Case notation.
-* **Constructor Functions**: Functions that create an object are called constructors and are written in Upper-Camel-Case notation.
+* **Callbacks**: Callbacks are functions that are passed to another function. Their type is written in UpperCamelCase notation.
+* **Constructor Functions**: Functions that create an object are called constructors and are written in UpperCamelCase notation.
 
-To prevent code duplication, types are kept as generic as possible. As an example, callback types have been created analogous to those known from the Java Functional Interfaces. These types, which could be kept generic and are not only used in a special context, are stored in a separate file. Such a file is named with `types.js` and can be found for example [here](https://github.com/wildwyss/Kolibri/blob/main/contrib/p5\_wild\_wyss/src/types.js).
+To prevent code duplication, types are kept as generic as possible. As an example, callback types have been created analogous to those known from the Java functional interfaces. Each feature has it's type definition in a separate file named `types.js`. An example can be found [here](https://github.com/wildwyss/Kolibri/blob/main/contrib/p5\_wild\_wyss/src/types.js).
 
-#### Example
+### Example
 
 The following example shows a detailed description of the range constructor. It is easy to see that special behaviors, which may not be intuitive for everyone, can be described well.
 
@@ -97,4 +97,4 @@ const Range = (firstBoundary, secondBoundary = 0, step = 1) => {
 | Java - Functional Interfaces                             | [https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html) |
 | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IP6-Documentation including the Test Framework (Page 61) | [https://dierk.github.io/Home/data/IP6\_Bericht\_Misic\_H%C3%A4fliger.pdf](https://dierk.github.io/Home/data/IP6\_Bericht\_Misic\_H%C3%A4fliger.pdf)                   |
-| jsDoc Homepage                                           | [https://jsdoc.app/](https://jsdoc.app/)                                                                                                                               |
+| JSDoc Homepage                                           | [https://jsdoc.app/](https://jsdoc.app/)                                                                                                                               |
