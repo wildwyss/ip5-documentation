@@ -12,7 +12,7 @@ The basic functionality of an iterator, the possible operations on it and the ge
 
 ### What is an iterator?
 
-An iterator in JavaScript is an object that is implemented in compliance with the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols). An iterator is characterized by the fact that it can only be iterated once over a set of elements. After that the iterator is used up.
+An iterator in JavaScript is an object that is implemented in compliance with the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols) (henceforth called JS iteration protocols). An iterator is characterized by the fact that it can only be iterated once over a set of elements. After that the iterator is used up.
 
 {% hint style="info" %}
 When Kolibri Iterator is mentioned in this chapter, the implementation of the Iterator protocol described **here** is referred to. However, if only iterator is mentioned, iterators in general are meant.
@@ -29,7 +29,7 @@ In order to be **iterable**, an object must have a property with the key `[Symbo
 
 ### What can an iterator be used for?
 
-An iterator following the [JavaScript iterator and iterable protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration\_protocols)  allows to use `for-of` loops, destructuring assignments and much more on a self created object type. This opens up new possibilities in the way programming problems can be solved. Later in this document, a [Range](range.md) using a Kolibri Iterator which is specialized on numbers will be described.
+An iterator following the JS iteration protocols allows to use `for-of` loops, destructuring assignments and much more on a self created type. This opens up new possibilities in the way programming problems can be solved. Later in this document, a [Range](range.md) using a Kolibri Iterator which is specialized on numbers will be described.
 
 Another advantage of the iterator is that the next element can be calculated. Thus, under certain circumstances, only the current element must be stored. This can significantly increase the storage efficiency.
 
