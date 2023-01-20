@@ -32,7 +32,7 @@ Similar to the date roller on mobile devices, another implementation that uses a
 
 The working slot machine can be tried out here: [Slot machine demo application](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/focusring/example/SlotMachine.html).
 
-Based on the concept of the [Kolibri Iterator](iterator.md), a Focus Ring can be implemented with little effort.
+Based on the concept of the Kolibri Iterator, a Focus Ring can be implemented with little effort.
 
 ## Features
 
@@ -42,7 +42,7 @@ Based on the concept of the [Kolibri Iterator](iterator.md), a Focus Ring can be
 
 ## Implementation
 
-The Focus Ring is internally implemented with two [Kolibri Iterators](iterator.md), which are subsequently called `pre` and `post`. The following figures illustrate the internal handling of the iterators when the focus is shifted several times in one direction. The element that is in focus is always the head element of `post` and is drawn in purple.
+The Focus Ring is internally implemented with two Kolibri Iterators, which are subsequently called `pre` and `post`. The following figures illustrate the internal handling of the iterators when the focus is shifted several times in one direction. The element that is in focus is always the head element of `post` and is drawn in purple.
 
 The following figure demonstrates what happens when the focus is shifted to the right, but no more element is on the right side focus:
 
