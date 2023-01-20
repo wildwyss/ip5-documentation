@@ -2,7 +2,7 @@
 
 ## Problem statement
 
-In this IP5 project, several solutions known from functional programming languages are adapted to JavaScript. These functional solution approaches bring various advantages such as better clarity, maintainability and easier verifiability through unit tests.
+In this IP5, several solutions known from functional programming languages are adapted to JavaScript. These functional solution approaches bring various advantages such as better clarity, maintainability and easier verifiability through unit tests.
 
 JavaScript, which already implements many concepts of functional programming at its core, is thus supplemented by further suitable constructs. The usefulness of these constructs are ensured by user tests.
 
@@ -61,3 +61,8 @@ Because this IP5 is not a typical implementation project, but a research project
 [The next section](technical-documentation/) covers the technical details and implementation of this IP5 in-depth. It gives an understanding how the artefacts developed in this project work and how they can be used within other projects.
 
 Readers interested primarily in the results are referred directly to the [Results](introduction.md#results) section at this point.
+
+## References
+
+| Project description | [22HS\_IMVS37](https://wildwyss.github.io/ip5-overview/22HS\_IMVS37%20Funktionale%20Standard%20Library%20f%C3%BCr%20das%20Kolibri%20Web%20UI%20Toolkit.pdf) |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
