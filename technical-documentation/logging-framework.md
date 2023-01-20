@@ -193,15 +193,15 @@ let debug = debug("ch.wyss.tobias");
 
 Before log messages are logged, a formatting function is applied to them. This formatting function is of type `MsgFormatType` and is passed directly to the logger. The function takes the following parameters in curried style:
 
-| Parameter    | Type     | Description                                  |
-| ------------ | -------- | -------------------------------------------- |
-| `context`    | `String` | The context of this log message.             |
-| `logLevel`   | `String` | The string representation of this log level. |
-| `logMessage` | `String` | The message that should be logged.           |
+| Parameter    | Type     | Description                                         |
+| ------------ | -------- | --------------------------------------------------- |
+| `context`    | `String` | The context of the logger used to log this message. |
+| `logLevel`   | `String` | The string representation of the loggers log level. |
+| `logMessage` | `String` | The message that should be logged.                  |
 
-From these parameters, an arbitrarily formatted string can now be compiled, which is then finally logged.
+From these parameters, an arbitrarily formatted string can now be formed, which is then finally logged.
 
-For example, the format function can be implemented like this:
+For example, the formatting function can be implemented like this:
 
 ```javascript
 /**
