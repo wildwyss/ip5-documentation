@@ -20,7 +20,7 @@ The complete application is an image gallery, which uses a Focus Ring and the lo
 
 ## Evaluation
 
-The feedback questionnaire was divided according to the implemented abstractions. At the end of the questionnaire, the probands were also allowed to state whether they considered themselves experienced programmers and whether they had knowledge of functional programming. Therefore, about three-fourths think they are experienced and almost all are familiar with functional programming.
+The feedback questionnaire was divided according to the tested abstractions. At the end of the questionnaire, the probands were also allowed to state whether they considered themselves experienced programmers and whether they had knowledge of functional programming. Therefore, about three-fourths think they are experienced and almost all are familiar with functional programming.
 
 ### Range
 
