@@ -32,11 +32,11 @@ In JavaScript there is a definition called [JS iteration protocols](https://deve
 
 #### Kolibri Iterator
 
-However, there are no operation defined in the iteration protocols that provide further processing of the values. Therefore, these are implemented in a first step. Which operations these are, is explained in the section [Iterator](technical-documentation/iterator.md).
+However, there are no operations defined in the iteration protocols that provide further processing of the values. Therefore, these are implemented in a first step. Which operations these are, is explained in the section [Iterator](technical-documentation/iterator.md).
 
 #### Range
 
-A range builds on a Kolibri Iterator and, like ranges in other programming languages, returns numerical values between two boundaries. All operations that are available to the Kolibri Iterator are also available to the Range.
+A range builds on a Kolibri Iterator and, like ranges in other programming languages, returns numerical values between two boundaries. All operations that are available to the Kolibri Iterator are also available to the range.
 
 #### Focus Ring
 
