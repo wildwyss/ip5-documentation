@@ -51,7 +51,7 @@ In order to achieve good consistency, existing naming concepts from the Kolibri 
 * **Callbacks**: Callbacks are functions that are passed to another function.&#x20;
 * **Constructor Functions**: Functions that create objects are called constructors.
 
-To prevent code duplication, types are kept as generic as possible. As an example, callback types have been created analogous to those known from the Java functional interfaces. Each feature has it's type definition in a separate file named `types.js`. An example can be found [here](https://github.com/wildwyss/Kolibri/blob/main/contrib/p5\_wild\_wyss/src/types.js).
+To prevent code duplication, types are kept as generic as possible. As an example, callback types have been created analogous to those known from the Java functional interfaces. Each feature has its type definition in a separate file named `types.js`. An example of such a file can be found [here](https://github.com/wildwyss/Kolibri/blob/main/contrib/p5\_wild\_wyss/src/types.js).
 
 ### Example
 
