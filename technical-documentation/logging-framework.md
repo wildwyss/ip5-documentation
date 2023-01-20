@@ -414,9 +414,9 @@ const container = document.getElementById("container");
 createLogUi(container);
 ```
 
-For ideas how to use the log ui in an application, please consider the example. The source code can be found [here](https://github.com/wildwyss/Kolibri/tree/main/contrib/p5\_wild\_wyss/src/logger/logUi).
+For ideas how to use the LogUI in an application, the example can be considered. The source code can be found [here](https://github.com/wildwyss/Kolibri/tree/main/contrib/p5\_wild\_wyss/src/logger/logUi).
 
-The running example can be found [here](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html). Note that you have to unwrap it by clicking on the Kolibri logo on the right side.
+The running example can be found [here](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html). Note that it has to be expanded by clicking on the Kolibri logo on the right side.
 
 ## Future features
 
