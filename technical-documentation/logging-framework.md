@@ -182,7 +182,7 @@ let debug = debugLogger;
 
 #### Logger context
 
-A logger is configured with an immutable context. This context is defined when a logger is created and stored as a string. It will compared with the logging context during a log operation.
+A logger is configured with an immutable context. This context is defined when a logger is created and stored as a string. It will be compared with the context set on the environment during a log operation.
 
 ```javascript
 // use the previously defined debug logger and set it's context
