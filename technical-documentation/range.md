@@ -5,7 +5,7 @@ description: A range for the Kolibri Web UI Toolkit
 # Range
 
 {% hint style="info" %}
-This section explains how a range works and how a new range can be created using the Kolibri.
+This section explains what a range is, how it works and how a new range can be created using the Kolibri.
 {% endhint %}
 
 ## Introduction
