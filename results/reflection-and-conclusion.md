@@ -8,7 +8,7 @@ The Kolibri could be extended with the previously documented functionalities. Th
 
 Basically, the cooperation with our customer and in our team was based on the extreme programming approach. We analyzed the results week by week and determined the next steps on an ongoing basis. This allowed us to focus on specific topics and to build complete and self-contained systems. This approach required us to maintain regular contact with our customer. So, with some exceptions, we met once a week for a meeting that usually took a few hours. The content of this meeting was to discuss the work done so far, to review the code and to define the next steps. This exchange was always enriching for both sides, rich in learning and motivating for further cooperation.
 
-From a technical perspective, we took a test-driven approach to our implementation wherever possible. Especially as the code base became more complex, we learned to appreciate this approach and achieved more robust results in less time. Another reason for the successful implementation of the features was the consistent documentation with JSDoc. Only the use of this documentation gives a certain type safety in JavaScript, which pays off with a larger code base.
+From a technical perspective, we took a test driven approach to our implementation wherever possible. Especially as the code base became more complex, we learned to appreciate this approach and achieved more robust results in less time. Another reason for the successful implementation of the features was the consistent documentation with JSDoc. Only the use of this documentation gives a certain type safety in JavaScript, which pays off with a larger code base.
 
 ### What went well?
 
