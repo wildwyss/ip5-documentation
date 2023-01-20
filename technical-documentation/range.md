@@ -74,9 +74,8 @@ To find out if a range has reached the end of its values, the current value (`ne
 
 There are two cases to be considered:
 
-If the step size is a negative value, it is counted from top to bottom: The range is at the end as soon as the `next` is smaller than `right`.&#x20;
-
-If the step size is positive, it is counted from bottom to top: The range is then at the end as soon as `next` is greater than the value `right`. Given these rules, the stop detection is built like:
+1. If the step size is a negative value, it is counted from top to bottom: The range is at the end as soon as the `next` is smaller than `right`.&#x20;
+2. If the step size is positive, it is counted from bottom to top: The range is then at the end as soon as `next` is greater than the value `right`. Given these rules, the stop detection is built like:
 
 ```javascript
 const hasReachedEnd = (stepIsNegative, next, end) =>
