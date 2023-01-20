@@ -56,7 +56,7 @@ The following feature set is implemented in the logging library:
 
 Modules have been created to divide up the various responsibilities. The following diagram illustrates the dependencies of the modules:
 
-<figure><img src="../.gitbook/assets/Logger_Diagramm.drawio (1).png" alt=""><figcaption><p>Dependency diagram logger modules</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Logger_Diagramm.drawio.png" alt=""><figcaption><p>Dependency diagram logger modules</p></figcaption></figure>
 
 | Module          | Description                                                                                                                                                      |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -120,7 +120,7 @@ const loggingLevel = getLoggingLevel();
 
 #### Appender
 
-To process log messages, at least one appender must be defined. An appender is a function that defines for each log level how a message is logged on it. These appenders are managed analog to the logging level.
+To process log messages, at least one appender must be defined. An appender is an object that defines per log level how a message is logged. These appenders are managed analog to the logging level.
 
 Appender can be configured as followed:
 
