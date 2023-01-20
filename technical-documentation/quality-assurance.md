@@ -22,7 +22,7 @@ In the following, the most important points are explained in more detail. These 
 
 ## Testing
 
-A test-driven approach was used where possible. In addition, care has been taken to ensure that every feature is tested. To achieve this, the Kolibri test suite was used, which was already implemented in the toolkit. The source code is located [here](https://github.com/WebEngineering-FHNW/Kolibri/blob/main/docs/src/kolibri/util/test.js).
+A test-driven approach was used where possible. In addition, care has been taken to ensure that every feature is tested. To achieve this, the [Kolibri test suite](https://github.com/WebEngineering-FHNW/Kolibri/blob/main/docs/src/kolibri/util/test.js) was used, which was already implemented in the toolkit.
 
 ### Benefits
 
