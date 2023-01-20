@@ -37,7 +37,7 @@ Another advantage of the iterator is that the next element can be calculated. Th
 
 When looking at other programming languages, it can be seen that the concept of iterating is probably represented in each one. The approaches to iterators in other programming languages differ mainly in the internal implementation, as well as in the number of the provided functionalities on an iterable object. JavaScript, for example, provides only a few operation on an iterable, whereas Haskell has implemented a more pronounced API.&#x20;
 
-Some concepts are adapted from Haskell during the development of this Kolibri Iterator. To give an example, a function `cons` was implemented analogous to the `cons` operator in Haskell.
+Some concepts are adapted from Haskell during the development of the Kolibri Iterator. To give an example, a function `cons` was implemented analogous to the `cons` operator in Haskell.
 
 The use of the Kolibri Iterator also suits those who are familiar with the Java Stream API.
 
