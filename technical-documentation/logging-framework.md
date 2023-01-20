@@ -191,7 +191,7 @@ let debug = debug("ch.wyss.tobias");
 
 #### Format message
 
-Before a log message is logged, a formatting function can be applied to the logger. This messages can be formatted using a function that is passed to the logger. This function has the type `MsgFormatType`. The function takes the following parameters in curried-style:
+Before log messages are logged, a formatting function is applied to them. This formatting function is of type `MsgFormatType` and is passed directly to the logger. The function takes the following parameters in curried style:
 
 | Parameter    | Type     | Description                                  |
 | ------------ | -------- | -------------------------------------------- |
