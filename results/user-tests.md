@@ -16,7 +16,7 @@ After the programming part, the test persons had to fill out a questionnaire. As
 
 The complete application is an image gallery, which uses a Focus Ring and the logging framework. It looks as follows:
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>The probands created an image gallery using the artefacts of this IP5.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>The probands created an image gallery using the artifacts of this IP5.</p></figcaption></figure>
 
 ## Evaluation
 
