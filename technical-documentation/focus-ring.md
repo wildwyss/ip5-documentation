@@ -20,7 +20,7 @@ There are many different use cases for a Focus Ring. The following are common on
 
 #### Image gallery
 
-A good application for the Focus Ring could be an image gallery. The user is currently looking at one image, which is the focus. With arrow buttons on the left and right, the image in the focus can be moved to the next or previous one.
+A good application for the Focus Ring could be an image gallery. The user is currently looking at one image, which is the focus. With arrow buttons on the left and right, the focus can be moved to the next or previous image.
 
 #### Rollers
 
