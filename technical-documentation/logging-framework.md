@@ -107,7 +107,7 @@ The individual log levels are arranged in a priority list. The currently active 
 
 Log messages that refer to a lower log level are ignored, messages that refer to the same level or a higher one are processed.
 
-The logging level can be changed using the provided function `setLoggingLevel`.
+The logging level can be changed using the provided function `setLoggingLevel()`.
 
 Using the function `getLoggingLevel()` the current logging level is returned.
 
