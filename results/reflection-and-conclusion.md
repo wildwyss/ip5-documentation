@@ -2,7 +2,7 @@
 
 ## Summary
 
-The [Kolibri Web UI Toolkit ](https://webengineering-fhnw.github.io/Kolibri/)could be extended with the previously documented functionalities. This fulfills the requirements specified in the project description, whereby even more functionality could be implemented. Therefore, the toolkit continues to grow in features and allows programmers who use it to build more stable and robust applications faster and easier. The procedure that led to this result is discussed in the following section. In doing so, the aspects that have been particularly successful and those that we see critical are addressed.
+The Kolibri could be extended with the previously documented functionalities. This fulfills the requirements specified in the project description, whereby even more functionality could be implemented. Therefore, the toolkit continues to grow in features and allows programmers who use it to build more stable and robust applications faster and easier. The procedure that led to this result is discussed in the following section. In doing so, the aspects that have been particularly successful and those that we see critical are addressed.
 
 ## Collaboration
 
