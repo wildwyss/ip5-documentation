@@ -86,7 +86,7 @@ const hasReachedEnd = (stepIsNegative, next, end) =>
 If `(right - left) % step` does not result in `0`, the last returned value of the range is smaller than `right`.
 {% endhint %}
 
-### Final implementation of the range
+### Implementation of the range
 
 Given the above described functionality the range is implemented as:
 
