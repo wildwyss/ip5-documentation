@@ -40,7 +40,7 @@ Below is a screenshot of the summary of all implemented tests written during the
 
 ### Benefits
 
-The whole code base is documented with JSDoc. Thus, the untyped language JavaScript can be supplemented with a working type safety. The IDE support is very large and recognizes whether the correct types are used. This helps with the implementation but also with the use of the source code.
+The whole code base is documented with JSDoc. Thus, the untyped language JavaScript can be supplemented with a working type safety. JSDoc is well supported by modern IDEs like IntelliJ. This helps with the implementation but also with the use of the source code.
 
 Furthermore, parameters, types and functions can be described in more detail in the code. This is very beneficial for users of the implementations and helps to significantly improve the understanding of the code.
 
