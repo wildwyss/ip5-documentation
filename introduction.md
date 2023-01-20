@@ -10,7 +10,7 @@ The quality of the results, documentation and tests are very important.
 
 ## Results
 
-The final artifacts of this IP5 are realized as parts of the Kolibri Web UI Toolkit. The project work can be divided into two parts:&#x20;
+The final artifacts of this IP5 are realized as parts of the [Kolibri Web UI Toolkit](https://webengineering-fhnw.github.io/Kolibri/) (henceforth called Kolibri). The project work can be divided into two parts:&#x20;
 
 1. Logging framework&#x20;
 2. Functional data structures
