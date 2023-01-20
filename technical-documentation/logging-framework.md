@@ -166,7 +166,7 @@ const logger = loggerLevel => context => formatMsg => msg =>
 The parameters passed to the logger function are used to configure the logger and are explained in detail in this section.
 
 {% hint style="success" %}
-To avoid wrong configured loggers, the function `logger` is not exported. logger functions preconfigured on log levels are exported instead. This is also why this function has been implemented curried: it allows to preconfigure the logger and reuse it at will.
+To avoid wrong configured loggers, the function `logger` is not exported. Logger functions preconfigured on log levels are exported instead. This is also why this function has been implemented curried: it allows to preconfigure the logger and reuse it at will.
 {% endhint %}
 
 #### Logger level
