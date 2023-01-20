@@ -91,7 +91,6 @@ If `(right - left) % step` does not result in `0`, the last returned value of th
 Given the above described functionality the range is implemented as:
 
 ```javascript
-// Some code
 const Range = (firstBoundary, secondBoundary = 1, step = 1) => {
   const stepIsNegative = 0 > step;
   // boundaries are normaleized according to the flow chart above
