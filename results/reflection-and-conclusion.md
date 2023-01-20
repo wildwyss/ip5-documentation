@@ -18,7 +18,7 @@ Our complete work organization has been orchestrated through a [Notion](https://
 
 One of the biggest learning gains came from the regular code reviews at meetings with our supervisor and customer Prof. D. König. At the beginning of a meeting we did a code walktrough and presented the results we achieved since the last meeting. In the process, we discussed implementation in all aspects: naming, documentation, architecture, code style, paradigms and much more. These conversations were extremely beneficial for learning and one of the most essential parts of this project for us.
 
-To get feedback on our work from uninvolved people, we prepared a user test towards the end of the project. This user test contains a small project in which a structure for an image gallery application is predefined. To complete the application, the test persons had to work through several todo's until the application was working. These smaller programming tasks had to be completed with the use of our implemented functionalities of the Kolibri Web UI Toolkit. Subsequently, the participants filled in a questionnaire with some questions concerning the implementations used.
+To get feedback on our work from uninvolved people, we prepared a user test towards the end of the project. This user test contains a small project in which a structure for an image gallery application is predefined. To complete the application, the test persons had to work through several todo's until the application was working. These smaller programming tasks had to be completed with the use of our implemented functionalities of the Kolibri. Subsequently, the participants filled in a questionnaire with some questions concerning the implementations used.
 
 ### What can be improved?
 
@@ -34,11 +34,11 @@ In retrospect, we were sometimes on the wrong track. This is normal in the devel
 
 ### Logging Framework
 
-At the beginning of the implementation, we fixedly assigned an appender to a logger. This meant that we could neither change the appender nor add more. Originally, the approach was to implement the logger as immutable as possible. However, we had to add an additional state for the appender in the logger. This now allows to remove or add appender during runtime. For more information, consult the [Appender](../technical-documentation/logging-framework.md#appender-1) section.
+At the beginning of the implementation, we decided to assign an appender directly to a logger and not to the environment. This meant that we could neither change the appender nor add more. Originally, the approach was to implement the logger with no mutable state. However, we had to add an additional state for the appender in the logger. This now allows to remove or add appender during runtime. For more information, consult the [Appender](../technical-documentation/logging-framework.md#appender-1) section.
 
 ### Iterator
 
-During the implementation of the iterator, the problem occurred that when copying an iterator, functions already applied to it were not copied as well. In other words, if map was called on an iterator and then copied, the map function was no longer available on the copy. We could solve this problem with a transform function, which is passed to the iterator. At the beginning the function is the id-function. If now a function like map is used on an iterator, the transform function is extended. This happens as described in the section [The Transform Function](../technical-documentation/iterator.md#the-transform-function).
+During the implementation of the iterator, the problem occurred that when copying an iterator, functions already applied to it were not copied as well. In other words, if `map` was called on an iterator and then copied, the `map` function was no longer applied on the copy. We could solve this problem with a `transform` function, which is passed to the iterator. At the beginning the function is the id function. If now a function like `map` is used on an iterator, the `transform` function is extended. This happens as described in the section [the transform function](../technical-documentation/iterator.md#the-transform-function).
 
 ## Conclusion
 
