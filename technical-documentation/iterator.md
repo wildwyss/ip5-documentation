@@ -171,7 +171,6 @@ A typical usage of `transform` looks as follows:
 For the operation `map` this looks as follows:
 
 ```javascript
-// Some code
   const map = mapper => {
     // 1. remember previous transform operation
     const oldTransform = transform;
