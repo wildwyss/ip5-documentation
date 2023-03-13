@@ -141,7 +141,7 @@ There are some predefined appenders. Custom appenders can be implemented as well
 
 #### Format message
 
-Before log messages are logged, a format function can optionally be defined on the logger environment. This is stored as global state and can be adjusted at any time. Initially, the logger message is the ID function, so it does not change the text. This formatting function is of type `MsgFormatType.` The function takes the following parameters in curried style:
+Before log messages are logged, a format function can optionally be defined on the logger environment. This is stored as global state and can be adjusted at any time. Initially, the logger message is the id-function, so it does not change the text. This formatting function is of type `MsgFormatType.` The function takes the following parameters in curried style:
 
 | Parameter    | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
