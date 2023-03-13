@@ -247,13 +247,12 @@ This factory can be used to configure the logging framework as desired.
 
 #### Parameters of the `LogFactory`
 
-| Parameter name | Type               | Description                                                                                           |
-| -------------- | ------------------ | ----------------------------------------------------------------------------------------------------- |
-| `context`      | `String`           | The [context](logging-framework.md#logger-context) of the logger.                                     |
-| `formatMsg`    | `FormatLogMessage` | A [function that formats log messages](logging-framework.md#format-message) before they are appended. |
+| Parameter name | Type     | Description                                                       |
+| -------------- | -------- | ----------------------------------------------------------------- |
+| `context`      | `String` | The [context](logging-framework.md#logger-context) of the logger. |
 
 {% hint style="info" %}
-All loggers returned by the log factory will have the same context and the same formatter. They differ only in their log levels.
+All loggers returned by the log factory will have the same context. They differ only in their log levels.
 {% endhint %}
 
 #### Example use of the `LogFactory`
