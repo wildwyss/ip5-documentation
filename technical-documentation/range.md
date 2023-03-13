@@ -133,13 +133,13 @@ Since each combination between the `firstBoundary`, the `secondBoundary` and the
 
 When using the Kolibri `Range` constructor, the following things must be respected:
 
-* End-value may not be reached exactly, but will never be exceeded.
+* End value may not be reached exactly, but will never be exceeded.
 * Zero step size leads to infinite loops, returning always the same values
 * Only values that behave correctly with respect to addition and size comparison may be passed as arguments.
 
 ### Examples
 
-Assumption that the implementation of the range is located under `/range/`.
+Assumption that the implementation of the range is located under `range/`.
 
 ```javascript
 import { Range } from "./range/range.js"

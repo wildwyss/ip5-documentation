@@ -56,7 +56,7 @@ The following feature set is implemented in the logging library:
 
 Modules have been created to divide up the various responsibilities. The following diagram illustrates the dependencies of the modules:
 
-<figure><img src="../.gitbook/assets/Logger_Diagramm.drawio.png" alt=""><figcaption><p>Dependency diagram logger modules</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/logger-diagramm.drawio.png" alt=""><figcaption></figcaption></figure>
 
 | Module          | Description                                                                                                                                                      |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -77,28 +77,32 @@ Roughly speaking, the logging framework has two aspects that need to be distingu
 1. Environment of the logging framework
 2. Loggers
 
-The logging environment defines the "what". The environment defines what is logged, where it is logged and if logging is done at all. Changes made to the environment will affect all loggers.
+The logging environment defines what is logged and provides functions to change the state of the logging environment. The state includes the active logging level, the logging context and an optional function to format the log message. Furthermore, a list of active appenders is kept, which is also managed by exported functions. Changes made to the environment will affect all loggers.
 
-A logger, on the other hand, defines the "how". A logger defines how a logging message looks like and on which level it is logged. When a new logger is created and configured, this does not affect existing loggers.
+A logger, on the other hand, defines the level and the context on which it logs. When a new logger is created and configured, this does not affect existing loggers.
 
 {% hint style="info" %}
 **logging level vs. logger level**\
 The term "logging level" refers to the lowest level that a log message must have in order to be logged. It is configured on the environment.\
-"Logger level", on the other hand, refers to the priority with which the respective logger writes log messages.
+"Logger level", on the other hand, refers to the priority with which the respective logger writes log messages.\
+\
+**logging context vs. logger context**\
+****The term "logging context" refers to the aktive context, on which the environment is set to.\
+"Logger context" denotes the context in relation to a single logger.
 {% endhint %}
 
 ### Configuration of the logging environment
 
-#### Context
+#### Logging Context
 
-The environment provides one global context. This globally active context is implemented in the module `logger.js` and represents a variable string. A log message is logged only if the environment's context is a prefix of the log message context.
+The environment provides one global context called logging context. This globally active context is implemented in the module `logger.js` and represents a variable string. A log message is logged only if the environment's logging context is a prefix of the logger context.
 
-By means of the following function the environments context is adjusted at runtime. So it is possible to only show log messages which have a specific context.
+By means of the following function the environments logging context is adjusted at runtime. So it is possible to only show log messages which have a specific context.
 
 ```javascript
-const myLogContext = "GLOBAL.CONTEXT"
-setGlobalContext(myLogContext);
-// Only messages from loggers whose context starts with "GLOBAL.CONTEXT" are logged.
+const myLogContext = "ENV.CONTEXT"
+setLoggingContext(myLogContext);
+// Only messages from loggers whose context starts with "ENV.CONTEXT" are logged.
 ```
 
 #### Logging level
@@ -135,6 +139,38 @@ addToAppenderList(consoleAppender);
 
 There are some predefined appenders. Custom appenders can be implemented as well. [Usage of appenders](logging-framework.md#appender-1) can be considered to see which appender exist and how new appenders can be developed.
 
+#### Format message
+
+Before log messages are logged, a format function can optionally be defined on the logger environment. This is stored as global state and can be adjusted at any time. Initially, the logger message is the ID function, so it does not change the text. This formatting function is of type `MsgFormatType.` The function takes the following parameters in curried style:
+
+| Parameter    | Type     | Description                                         |
+| ------------ | -------- | --------------------------------------------------- |
+| `context`    | `String` | The context of the logger used to log this message. |
+| `logLevel`   | `String` | The string representation of the loggers log level. |
+| `logMessage` | `String` | The message that should be logged.                  |
+
+From these parameters, an arbitrarily formatted string can now be formed, which is then finally logged.
+
+For example, the formatting function can be implemented like this:
+
+<pre class="language-javascript"><code class="lang-javascript">import { setMessageFormatter } from "../logger.js";
+
+<strong>/**
+</strong> * Creates a custom log message using the given parameters.
+ * @type { FormatLogMessage }
+ */
+const formatLogMsg = context => logLevel => logMessage => {
+  // add a date to the logmessage. In this way you can add information you want to the logmessage.
+  const date = new Date().toISOsString();
+  return `${context}: [${logLevel}] ${date}: ${logMessage}`;
+};
+
+setMessageFormatter(formatLogMsg);
+
+// use the previously defined logger and pass the formatting function to it.
+let debug = debug(formatLogMsg);
+</code></pre>
+
 ### Configuration of loggers
 
 There is only one logging environment, but there are any number of loggers. These loggers can all be configured and customized individually.
@@ -144,20 +180,17 @@ There is only one logging environment, but there are any number of loggers. Thes
 The core of the logger is the following function:
 
 ```javascript
-const logger = loggerLevel => context => formatMsg => msg =>
+const logger = loggerLevel => loggerContext => msg =>
   LazyIf(
-      // determines if log messages should be logged or not
-      messageShouldBeLogged(loggerLevel)(context)
+      messageShouldBeLogged(loggerLevel)(loggerContext)
   )
   (Then(() =>
-        // append message to all appenders
         appenderList
             .map(appender => {
               const levelName = loggerLevel(snd);
               const levelCallback = appender[levelName.toLowerCase()];
-              return levelCallback(formatMsg(context)(levelName)(evaluateMessage(msg)))
+              return levelCallback(formatMsg(loggerContext)(levelName)(evaluateMessage(msg)))
             })
-            // return True if log message has been appended to every appender
             .reduce((acc, cur) => and(acc)(cur), True)) // every() for array of churchBooleans
   )
   (Else(() => False));
@@ -182,40 +215,11 @@ let debug = debugLogger;
 
 #### Logger context
 
-A logger is configured with an immutable context. This context is defined when a logger is created and stored as a string. It will be compared with the context set on the environment during a log operation.
+A logger is configured with an immutable context. This context is defined when a logger is created and stored as a string. It will be compared with the logging context set on the environment during a log operation.
 
 ```javascript
 // use the previously defined debug logger and set it's context
 let debug = debug("ch.wyss.tobias");
-```
-
-#### Format message
-
-Before log messages are logged, a formatting function is applied to them. This formatting function is of type `MsgFormatType` and is passed directly to the logger. The function takes the following parameters in curried style:
-
-| Parameter    | Type     | Description                                         |
-| ------------ | -------- | --------------------------------------------------- |
-| `context`    | `String` | The context of the logger used to log this message. |
-| `logLevel`   | `String` | The string representation of the loggers log level. |
-| `logMessage` | `String` | The message that should be logged.                  |
-
-From these parameters, an arbitrarily formatted string can now be formed, which is then finally logged.
-
-For example, the formatting function can be implemented like this:
-
-```javascript
-/**
- * Creates a custom log message using the given parameters.
- * @type { FormatLogMessage }
- */
-const formatLogMsg = context => logLevel => logMessage => {
-  // add a date to the logmessage. In this way you can add information you want to the logmessage.
-  const date = new Date().toISOString();
-  return `${context}: [${logLevel}] ${date}: ${logMessage}`;
-};
-
-// use the previously defined logger and pass the formatting function to it.
-let debug = debug(formatLogMsg);
 ```
 
 #### Log a message
@@ -260,8 +264,9 @@ Assumption that the LoggingFramework is located under `logger/`.
 import { 
     LOG_DEBUG, 
     LOG_ERROR, 
-    setGlobalContext, 
-    setLoggingLevel 
+    setLoggingContext,
+    setLoggingLevel,
+    setMessageFormatter,
 }                     from "./logger/logger.js";
 /* Use a different appender by just importing the appender from another file. */
 import { Appender }   from "./logger/appender/consoleAppender.js";
@@ -276,7 +281,7 @@ addToAppenderList(Appender())
 setLoggingLevel(LOG_DBEUG);
 
 // only logmessages whose context is prefixed with "ch.fhnw" will be logged
-setGlobalContext("ch.fhnw");
+setLoggingContext("ch.fhnw");
 
 // use the LogFactory to create new loggers
 
@@ -286,11 +291,11 @@ const logContext   = "ch.fhnw.sample";
 // each logmessage should be formatted using this function, before logging.
 const formatLogMsg = context => logLevel => logMessage =>
     `${context}: [${logLevel}]: ${logMessage}`;
+setMessageFormatter(formatLogMsg);
 
 // get debug & error log function using our configuration
 // functions for not used in this example.
-const { debug, error } = 
-    LogFactory(logContext)(formatLogMsg);
+const { debug, error } = LogFactory(logContext);
 
 // log level
 debug("This is a message with loglevel debug.");
@@ -377,11 +382,11 @@ debug(lazy(difficultCalculation()));
 
 The LogUI is a visual representation of all log messages appended to the `ObservableAppender`. It can be used to search the log messages or filter them by log level. Following is a screenshot of the [sample application](https://wildwyss.github.io/ip5-overview/contrib/p5\_wild\_wyss/src/logger/logUi/example/logUiExampleView.html).
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/log-ui.png" alt=""><figcaption></figcaption></figure>
 
 The LogUI offers following functions:
 
-* Use the **Global Context** field to change the [Global Context](logging-framework.md#global-context) of the environment.
+* Use the **Logging Context** field to change the [Logging Context](logging-framework.md#logging-context) of the environment.
 * Use the **Logging Level** to select the [logging Level](logging-framework.md#log-levels).
 * Use the **Filter** field to display only log messages that contain the entered text.
 * Select a **chip** to show or hide messages belonging to this [log level](logging-framework.md#log-levels).
@@ -393,21 +398,28 @@ Assuming the logging framework located under `logger/`, the LogUI can be used in
 
 ```javascript
 import { LogFactory }                     from "./logger/logFactory.js";
-import { LOG_TRACE,addToAppenderList }    from "./logger/logger.js";
-
 import { Appender as ObservableAppender } from "./logger/observableAppender.js";
 import { Appender as ConsoleAppender }    from "./logger/consoleAppender.js";
-
+import { 
+    LOG_TRACE, 
+    addToAppenderList,
+    setMessageFormatter,
+    setLoggingContext,
+    
+} from "./logger/logger.js";
 
 // use the observable Appender here (see imports)
 addToAppenderList(ObservableAppender());
 addToAppenderList(ConsoleAppender());
 
+// defines a custom log message formatter
 const formatLogMsg = ... ;
+setMessageFormatter(formatLogMsg);
 
-const logger1 = LogFactory("ch.fhnw")(formatLogMsg);
 
-// Refer to a div in your HTML
+const logger1 = LogFactory("ch.fhnw");
+
+// refer to a div in your HTML
 const container = document.getElementById("container");
 
 // add the LogUi to your document using this imported function.
@@ -426,7 +438,7 @@ This section describes further features that could extend the logging framework.
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LogUI modes                      | When new log messages come into the LogUI, the container is scrolled to the bottom. There should be an **inspection mode** which disables the income of new log messages therefore. This mode has to be enabled and disabled manually. |
 | Performance measurement appender | An appender which automatically measures the time between two log messages would be helpful. This could be used for performance measurements.                                                                                          |
-| log different message types      | At the moment only `String`s or functions which produce a `String` can be logged. It would be helpful to log other things like `Object`s or `Number`s.                                                                                 |
+| Log different message types      | At the moment only `String`s or functions which produce a `String` can be logged. It would be helpful to log other things like `Object`s or `Number`s.                                                                                 |
 
 ## References
 
