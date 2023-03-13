@@ -165,10 +165,8 @@ const formatLogMsg = context => logLevel => logMessage => {
   return `${context}: [${logLevel}] ${date}: ${logMessage}`;
 };
 
+// use the previously defined formatting-function an set it on the environment
 setMessageFormatter(formatLogMsg);
-
-// use the previously defined logger and pass the formatting function to it.
-let debug = debug(formatLogMsg);
 </code></pre>
 
 ### Configuration of loggers
