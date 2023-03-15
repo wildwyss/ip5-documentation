@@ -41,10 +41,10 @@ The already mentioned framework Log4j is probably the most used for the programm
 
 The following feature set is implemented in the logging library:
 
-* **Different logger levels**: Each logger logs it's messages on a specific logger level (analog to Log4j). A global logging level determines which log messages should be output at the moment.
+* **Different logger levels**: Each logger logs its messages on a specific logger level (analog to Log4j). A global logging level determines which log messages should be output at the moment.
 * **Raising log levels**: Messages logged using a logger on a higher level are also output if a lower logging level is active. However, not in the reverse case.
 * **Context**: Each logger logs its messages on a context. This can be used to identify where the log statement comes from.
-* **Restrict contexts**: The logging framework supports that contexts can be restricted. This way, logging messages that are not needed can be ignored.
+* **Restrict contexts**: The logging framework supports that contexts can be restricted. This way, log messages that are not needed can be ignored.
 * **Formatting of log messages**: The format of the logged message can be defined by the user.
 * **Appender**: There are several predefined appenders that can be used to configure the logging framework. For example, log messages can be added to the `ConsoleAppender` and the `ArrayAppender`. If an appender stores the messages in an internal data structure, they can be retrieved again. Following appenders are implemented:
   * `ConsoleAppender`: Writes log messages to the web console.
@@ -87,7 +87,7 @@ The term "logging level" refers to the lowest level that a log message must have
 "Logger level", on the other hand, refers to the priority with which the respective logger writes log messages.\
 \
 **logging context vs. logger context**\
-****The term "logging context" refers to the aktive context, on which the environment is set to.\
+****The term "logging context" refers to the context, to which the environment is set to.\
 "Logger context" denotes the context in relation to a single logger.
 {% endhint %}
 
@@ -95,7 +95,7 @@ The term "logging level" refers to the lowest level that a log message must have
 
 #### Logging Context
 
-The environment provides one global context called logging context. This globally active context is implemented in the module `logger.js` and represents a variable string. A log message is logged only if the environment's logging context is a prefix of the logger context.
+The environment provides one global context called logging context. This globally active context is implemented in the module `logger.js` and represents a variable string. A log message is logged only if the environments logging context is a prefix of the loggers context.
 
 By means of the following function the environments logging context is adjusted at runtime. So it is possible to only show log messages which have a specific context.
 
@@ -141,7 +141,7 @@ There are some predefined appenders. Custom appenders can be implemented as well
 
 #### Format message
 
-Before log messages are logged, a format function can optionally be defined on the logger environment. This is stored as global state and can be adjusted at any time. Initially, the logger message is the id-function, so it does not change the text. This formatting function is of type `MsgFormatType.` The function takes the following parameters in curried style:
+Before log messages are logged, a format function can optionally be defined on the logger environment. This is stored as global state and can be adjusted at any time. Initially, the format message is the `id`-function, so it does not change the text. This formatting function is of type `MsgFormatType.` The function takes the following parameters in curried style:
 
 | Parameter    | Type     | Description                                         |
 | ------------ | -------- | --------------------------------------------------- |
@@ -277,7 +277,7 @@ addToAppenderList(Appender())
 // The value can be changed during runtime, which affects the logged messages.
 setLoggingLevel(LOG_DBEUG);
 
-// only logmessages whose context is prefixed with "ch.fhnw" will be logged
+// only logm essages whose context is prefixed with "ch.fhnw" will be logged
 setLoggingContext("ch.fhnw");
 
 // use the LogFactory to create new loggers
@@ -350,11 +350,11 @@ If an appender stores log messages in a data structure, attention must be payed 
 
 To apply appenders the provided functions exported by the module `logger.js` need to be used. Following functions are provided by `logger.js` for managing the current loggers:
 
-| Name                     | Parameters               | Description                                                                                  |
-| ------------------------ | ------------------------ | -------------------------------------------------------------------------------------------- |
-| `addToAppenderlist()`    | `appender: AppenderType` | Adds a new appender to the logging environment.                                              |
-| `getAppenderList()`      | -                        | Returns a copy of the array containing all appenders.                                        |
-| `removeFromAppenderList` | `item: AppenderType`     | Removes `item` from the current appenders. A copy of the array of the appenders is returned. |
+| Name                       | Parameters               | Description                                                                                  |
+| -------------------------- | ------------------------ | -------------------------------------------------------------------------------------------- |
+| `addToAppenderlist()`      | `appender: AppenderType` | Adds a new appender to the logging environment.                                              |
+| `getAppenderList()`        | -                        | Returns a copy of the array containing all appenders.                                        |
+| `removeFromAppenderList()` | `item: AppenderType`     | Removes `item` from the current appenders. A copy of the array of the appenders is returned. |
 
 The good thing about globally used appenders is, that it does not matter which appender is used during development. Which appenders should be used can be decided during the testing of the application or even changed at runtime.
 
